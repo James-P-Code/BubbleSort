@@ -19,7 +19,6 @@ BarChart::BarChart()
 
     /*  The x and y of the following rectangles define the x and y positions of the rectangle's top left corner.  The
     *   rest of the rectangle is defined using this top left corner value and the width and height values (w and h).  Because
-    *
     *   of this we will use the height values we just created as the y value, while the h value will be how far the
     *   rectangle extends down from its top left corner   */
     for (int i = 0; i < numberOfRectangles; ++i)
