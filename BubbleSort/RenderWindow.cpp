@@ -4,20 +4,21 @@ RenderWindow::RenderWindow()
 {
     constexpr int driverIndex = -1;
 
-    SDL_InitSubSystem(SDL_INIT_VIDEO);
     window = std::unique_ptr<SDL_Window, InvokeDestroy>(SDL_CreateWindow("Bubblesort Visualization", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, SDL_WINDOW_SHOWN));
     renderer = std::unique_ptr<SDL_Renderer, InvokeDestroy>(SDL_CreateRenderer(window.get(), driverIndex, SDL_RENDERER_PRESENTVSYNC));
+    textToRender.createAtlas(renderer.get());
 }
 
-void RenderWindow::renderArray(const SDL_Rect* rectangleArray) const
+void RenderWindow::renderArray(const SDL_Rect* rectangleArray, const std::string& swapCount)
 {
     clearRenderer();
     SDL_SetRenderDrawColor(renderer.get(), defaultColor.r, defaultColor.g, defaultColor.b, defaultColor.a);
     SDL_RenderFillRects(renderer.get(), rectangleArray, numberOfRectangles);
+    textToRender.renderText(renderer.get(), swapCount);
     SDL_RenderPresent(renderer.get());
 }
 
-void RenderWindow::highlightRectangle(const SDL_Rect* rectangleArray, const int rectangleToHighlight) const
+void RenderWindow::highlightRectangle(const SDL_Rect* rectangleArray, const int rectangleToHighlight, const std::string& swapCount)
 {
     clearRenderer();
     // render and fill all of the rectangles and then...
@@ -26,6 +27,7 @@ void RenderWindow::highlightRectangle(const SDL_Rect* rectangleArray, const int 
     // ...render and fill the rectangle we want to highlight
     SDL_SetRenderDrawColor(renderer.get(), highlightColor.r, highlightColor.g, highlightColor.b, highlightColor.a);
     SDL_RenderFillRect(renderer.get(), &rectangleArray[rectangleToHighlight]);
+    textToRender.renderText(renderer.get(), swapCount);
 
     SDL_RenderPresent(renderer.get());
 }

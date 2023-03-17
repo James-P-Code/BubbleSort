@@ -33,7 +33,7 @@ BarChart::BarChart()
         xPosition += rectangleWidth;
     }
 
-    renderWindow.renderArray(rectangleArray);
+    renderWindow.renderArray(rectangleArray, swapCountDisplay);
 }
 
 void BarChart::bubbleSort()
@@ -62,8 +62,10 @@ void BarChart::bubbleSort()
                 rectangleArray[currentRectangle + 1].y = tempY;
                 rectangleArray[currentRectangle + 1].h = tempH;
                 swapOccurred = true;
+                swapCount++;
             }
-            renderWindow.highlightRectangle(rectangleArray, swapOccurred ? currentRectangle + 1 : currentRectangle);
+            swapCountDisplay = "Swap Count: " + std::to_string(swapCount);
+            renderWindow.highlightRectangle(rectangleArray, swapOccurred ? currentRectangle + 1 : currentRectangle, swapCountDisplay);
         }
         if (!swapOccurred)
         {
@@ -106,4 +108,9 @@ void BarChart::handleEvents()
             quitEventStatus = true;
         }
     }
+}
+
+const std::string BarChart::getSwapCount() const
+{
+    return swapCountDisplay;
 }

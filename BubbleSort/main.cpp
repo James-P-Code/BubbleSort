@@ -32,6 +32,5 @@ int main(int argc, char* argv[])
 		SDL_Delay(delayTime);
 	}
 
-	SDL_Quit();
 	return 0;
 }
