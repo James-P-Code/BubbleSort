@@ -143,19 +143,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BarChart.cpp" />
+    <ClCompile Include="Bubblesort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RenderWindow.cpp" />
     <ClCompile Include="SDLSubSystem.cpp" />
+    <ClCompile Include="SortedState.cpp" />
+    <ClCompile Include="SortingState.cpp" />
+    <ClCompile Include="SortManager.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="TTFSubSystem.cpp" />
+    <ClCompile Include="UnsortedState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BarChart.h" />
+    <ClInclude Include="BarChartState.h" />
+    <ClInclude Include="Bubblesort.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="RenderWindow.h" />
     <ClInclude Include="SDLSubSystem.h" />
+    <ClInclude Include="SortAlgorithm.h" />
+    <ClInclude Include="SortedState.h" />
+    <ClInclude Include="SortingState.h" />
+    <ClInclude Include="SortManager.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TTFSubSystem.h" />
+    <ClInclude Include="UnsortedState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

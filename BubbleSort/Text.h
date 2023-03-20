@@ -6,13 +6,14 @@
 #include <string>
 #include <unordered_map>
 #include "TTFSubSystem.h"
+#include <iostream>
 
 class Text final : public TTFSubSystem
 {
 public:
 	Text();
 	void createAtlas(SDL_Renderer* renderer);
-	void renderText(SDL_Renderer* renderer, const std::string& textToRender);
+	void render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect& destRect);
 
 private:
 	struct InvokeDestroy

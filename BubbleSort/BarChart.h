@@ -3,26 +3,21 @@
 #include "SDL.h"
 #include <random>
 #include <algorithm>
-#include <string>
+#include <memory>
+#include <array>
 #include "Constants.h"
-#include "RenderWindow.h"
 
 class BarChart final
 {
 public:
 	BarChart();
-	void bubbleSort();
-	const bool isSorted() const;
-	const bool quitEvent() const;
-	const std::string getSwapCount() const;
+	std::array<SDL_Rect, numberOfRectangles>& getChart();
+	const int getSwapCount() const;
+	void updateSwapCount(int swapCount);
 
 private:
-	bool sortedStatus = false, quitEventStatus = false;
-	int swapCount = 0;
-	std::string swapCountDisplay = "Swap Count: 0";
-	SDL_Rect rectangleArray[numberOfRectangles];
-	RenderWindow renderWindow;
+	int swapCount;
+	std::array<SDL_Rect, numberOfRectangles> rectangleArray;
 
 	const int normalizeHeight(const int numberToNormalize) const;
-	void handleEvents();
 };

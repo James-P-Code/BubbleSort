@@ -1,19 +1,17 @@
 #include "Text.h"
 
-Text::Text()
-{
-	font = std::unique_ptr<TTF_Font, InvokeDestroy>(TTF_OpenFont("PressStart2P-Regular.ttf", 16));
-}
+Text::Text() : font(std::unique_ptr<TTF_Font, InvokeDestroy>(TTF_OpenFont("PressStart2P-Regular.ttf", 16))) {}
 
 /*  the createAtlas function will create one single texture we can then use to render any future text.  because this program intends to have text
-*   displays that change often (the swap counter, for instance) it is more efficient to create this glyph atlas texture and render from that.
+*   displays that change often (the swap counter) it is more efficient to create this glyph atlas texture and render from that.
 *   otherwise we would have to create a surface and texture for every single text update, and often that texture would only be needed for a few
 *   frames at most.  instead of doing those expensive operations many times, we'll use this much more efficient method.   */
 void Text::createAtlas(SDL_Renderer* renderer)
 {
-	constexpr int nullTerminatedChar = 2, textureSize = 512, depth = 32, alphaMask = 0xff;
+	int startTime = SDL_GetTicks();
+	int endTime;
+	constexpr int nullTerminatedChar = 2, textureSize = 512, depth = 32, alphaMask = 255;
 	constexpr SDL_Color white = { 255, 255, 255, 255 }, black = { 0, 0, 0 ,0 };
-	int i;
 	SDL_Rect destRect = { 0, 0, 0, 0 };
 	SDL_Surface* s = SDL_CreateRGBSurface(0, textureSize, textureSize, depth, black.r, black.g, black.b, alphaMask);
 	std::unique_ptr<SDL_Surface, InvokeDestroy> surface;
@@ -22,7 +20,7 @@ void Text::createAtlas(SDL_Renderer* renderer)
 
 	SDL_SetColorKey(surface.get(), SDL_TRUE, SDL_MapRGBA(surface->format, black.r, black.g, black.b, black.a));  // set the background of the text surface to be transparent
 
-	for (i = ' '; i < 'z'; ++i)
+	for (int i = ' '; i < 'z'; ++i)
 	{
 		/* some of the functions we will be using require a const char* parameter, which specifically has to be null terminated.
 		*  to faciliate this we can use this small array, and creating it like this makes it so it is implicitly null terminated.  */
@@ -43,18 +41,15 @@ void Text::createAtlas(SDL_Renderer* renderer)
 		glyphRects[i] = { destRect.x, destRect.y, destRect.w, destRect.h };
 		destRect.x += destRect.w;
 	}
+
 	atlasTexture = std::unique_ptr<SDL_Texture, InvokeDestroy>(SDL_CreateTextureFromSurface(renderer, surface.get())); // create the full atlas texture
+	endTime = SDL_GetTicks();
+	std::cout << endTime - startTime;
 }
 
-void Text::renderText(SDL_Renderer* renderer, const std::string& textToRender)
+void Text::render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect& destRect)
 {
-	constexpr SDL_Color defaultFontColor = { 111, 245, 66 };
-	SDL_Rect destRect;
-	SDL_SetTextureColorMod(atlasTexture.get(), defaultFontColor.r, defaultFontColor.g, defaultFontColor.b);
-
-	// x and y position where the text will start to be displayed
-	destRect.x = 10;
-	destRect.y = 10;
+	SDL_SetTextureColorMod(atlasTexture.get(), textColor.r, textColor.g, textColor.b);
 
 	for (const char& c : textToRender)
 	{

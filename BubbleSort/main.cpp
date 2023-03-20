@@ -4,32 +4,38 @@
 
 #include "SDL.h"
 #include "Constants.h"
-#include "BarChart.h"
+#include "SortManager.h"
 
 int main(int argc, char* argv[])
 {
-	BarChart chartToSort;
+	SortManager sm;
 	SDL_Event event;
+	uint32_t frameStart, frameEnd;
 	bool quit = false;
 
 	while (!quit)
 	{
+		frameStart = SDL_GetTicks();
+
 		while (SDL_PollEvent(&event))
 		{
 			if (event.type == SDL_QUIT)
 			{
 				quit = true;
 			}
-			if (event.type == SDL_KEYDOWN && !chartToSort.isSorted())
-			{
-				chartToSort.bubbleSort();
-			}
+
+			sm.handleEvent(event);			
 		}
-		if (chartToSort.quitEvent())
+		sm.update();
+		sm.render();
+		sm.changeState();
+
+		frameEnd = SDL_GetTicks() - frameStart;
+
+		if (frameEnd < frameDelay) // cap the fps to the maxFPS constant value
 		{
-			quit = true;
+			SDL_Delay(frameDelay - frameEnd);
 		}
-		SDL_Delay(delayTime);
 	}
 
 	return 0;
