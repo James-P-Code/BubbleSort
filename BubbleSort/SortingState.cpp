@@ -48,7 +48,7 @@ void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& 
 	SDL_Color textColor = { 111, 245, 66, 255 };
 	renderWindow.clearRenderer();
 	renderWindow.renderArray(rectangleArray);
-	renderWindow.highlightRectangle(swapOccurred ? &rectangleArray[currentRectangle] : &rectangleArray[currentRectangle - 1]);
+	renderWindow.highlightRectangle(swapOccurred ? rectangleArray[currentRectangle] : rectangleArray[currentRectangle - 1]);
 	text.render(renderWindow.getRenderer(), "Swap Count: " + std::to_string(barChart.getSwapCount()), textColor, textDisplayRect);
 	renderWindow.updateWindow();
 }
@@ -60,6 +60,5 @@ void SortingState::changeState(SortManager& sortManager)
 	if (changeStateStatus)
 	{
 		sortManager.setState(std::make_unique<SortedState>());
-		changeStateStatus = false;
 	}
 }

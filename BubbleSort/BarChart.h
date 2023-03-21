@@ -6,6 +6,7 @@
 #include <memory>
 #include <array>
 #include "Constants.h"
+#include <iostream>
 
 class BarChart final
 {
@@ -14,6 +15,7 @@ public:
 	std::array<SDL_Rect, numberOfRectangles>& getChart();
 	const int getSwapCount() const;
 	void updateSwapCount(int swapCount);
+	void resetChart();
 
 private:
 	int swapCount;

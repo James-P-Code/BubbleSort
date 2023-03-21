@@ -1,6 +1,20 @@
 #include "UnsortedState.h"
 
-void UnsortedState::update(BarChart& barChart) {}
+// Use this constructor to reset the bar chart
+UnsortedState::UnsortedState(const bool resetBarChart)
+{
+	this->resetBarChart = resetBarChart;
+}
+
+void UnsortedState::update(BarChart& barChart) 
+{
+	if (resetBarChart)
+	{
+		barChart.resetChart();
+		barChart.updateSwapCount(0);
+		resetBarChart = false;
+	}
+}
 
 void UnsortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& text)
 {
@@ -29,6 +43,5 @@ void UnsortedState::changeState(SortManager& sortManager)
 	if (changeStateStatus)
 	{
 		sortManager.setState(std::make_unique<SortingState>());
-		changeStateStatus = false;
 	}
 }

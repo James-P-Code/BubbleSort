@@ -14,7 +14,7 @@ void SortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& t
 
 	if (currentRectangle < numberOfRectangles) // gradient fill flourish effect
 	{
-		renderWindow.highlightRectangle(&barChart.getChart().at(currentRectangle), flourishColor);
+		renderWindow.highlightRectangle(barChart.getChart().at(currentRectangle), flourishColor);
 		--flourishColor.r;
 		--flourishColor.g;
 		++currentRectangle;
@@ -26,6 +26,18 @@ void SortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& t
 	}
 }
 
-void SortedState::handleEvent(SDL_Event& event) {}
+void SortedState::handleEvent(SDL_Event& event) 
+{
+	if (event.type == SDL_KEYDOWN)
+	{
+		changeStateStatus = true;
+	}
+}
 
-void SortedState::changeState(SortManager& sortManager) {}
+void SortedState::changeState(SortManager& sortManager) 
+{
+	if (changeStateStatus)
+	{
+		sortManager.setState(std::make_unique<UnsortedState>(true));
+	}
+}

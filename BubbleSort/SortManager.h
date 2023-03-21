@@ -3,6 +3,7 @@
 #include "RenderWindow.h"
 #include "BarChart.h"
 #include "Text.h"
+#include "MenuState.h"
 #include "UnsortedState.h"
 #include "SortingState.h"
 #include "SortedState.h"

@@ -145,6 +145,7 @@
     <ClCompile Include="BarChart.cpp" />
     <ClCompile Include="Bubblesort.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="RenderWindow.cpp" />
     <ClCompile Include="SDLSubSystem.cpp" />
     <ClCompile Include="SortedState.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="BarChartState.h" />
     <ClInclude Include="Bubblesort.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="MenuState.h" />
     <ClInclude Include="RenderWindow.h" />
     <ClInclude Include="SDLSubSystem.h" />
     <ClInclude Include="SortAlgorithm.h" />

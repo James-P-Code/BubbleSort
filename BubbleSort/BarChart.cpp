@@ -58,3 +58,22 @@ const int BarChart::normalizeHeight(const int numberToNormalize) const
 
     return static_cast<int>((numberToNormalize - minRange) / (maxRange - minRange) * (maxBarHeight - minBarHeight) + minBarHeight);
 }
+
+void BarChart::resetChart()
+{
+    std::array<int, numberOfRectangles> rectangleHeights;
+    std::mt19937 randomSeed(std::random_device{}());
+
+    for (int i = 0; i < numberOfRectangles; ++i)
+    {
+        rectangleHeights[i] = normalizeHeight(i);
+    }
+
+    std::shuffle(std::begin(rectangleHeights), std::end(rectangleHeights), randomSeed);
+
+    for (int i = 0; i < numberOfRectangles; ++i)
+    {
+        rectangleArray[i].y = rectangleHeights[i];
+        rectangleArray[i].h = windowHeight - rectangleHeights[i];
+    }
+}

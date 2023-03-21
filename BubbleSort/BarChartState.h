@@ -19,5 +19,5 @@ public:
 	virtual ~BarChartState() {};
 
 protected:
-	bool changeStateStatus = false;
+	bool changeStateStatus = false;  // no need to set this to false in the indivdual states, it will reset on any state change
 };

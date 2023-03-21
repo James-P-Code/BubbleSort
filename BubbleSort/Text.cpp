@@ -8,8 +8,6 @@ Text::Text() : font(std::unique_ptr<TTF_Font, InvokeDestroy>(TTF_OpenFont("Press
 *   frames at most.  instead of doing those expensive operations many times, we'll use this much more efficient method.   */
 void Text::createAtlas(SDL_Renderer* renderer)
 {
-	int startTime = SDL_GetTicks();
-	int endTime;
 	constexpr int nullTerminatedChar = 2, textureSize = 512, depth = 32, alphaMask = 255;
 	constexpr SDL_Color white = { 255, 255, 255, 255 }, black = { 0, 0, 0 ,0 };
 	SDL_Rect destRect = { 0, 0, 0, 0 };
@@ -43,8 +41,6 @@ void Text::createAtlas(SDL_Renderer* renderer)
 	}
 
 	atlasTexture = std::unique_ptr<SDL_Texture, InvokeDestroy>(SDL_CreateTextureFromSurface(renderer, surface.get())); // create the full atlas texture
-	endTime = SDL_GetTicks();
-	std::cout << endTime - startTime;
 }
 
 void Text::render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect& destRect)
