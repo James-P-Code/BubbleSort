@@ -5,6 +5,8 @@
 *  1 step at a time allows all of the rendering and event handling to happen as needed    */
 void SortingState::update(BarChart& barChart)
 {
+
+	
 	swapCount = barChart.getSwapCount();
 
 	if (!rectangleArray)
@@ -12,6 +14,41 @@ void SortingState::update(BarChart& barChart)
 		rectangleArray = barChart.getChart().data();
 	}
 
+	// SELECTION SORT
+	if (sortIterator < numberOfRectangles - 1)
+	{
+
+		if (currentRectangle < sortIterator + 1)
+		{
+			indexOfMinimum = sortIterator;
+			currentRectangle = sortIterator + 1;
+		}
+
+		if (currentRectangle < numberOfRectangles)
+		{
+			if (rectangleArray[currentRectangle].y > rectangleArray[indexOfMinimum].y)
+			{
+				indexOfMinimum = currentRectangle;
+			}
+			++currentRectangle;
+		}
+		else
+		{
+			if (indexOfMinimum != 1)
+			{
+				int tempY = rectangleArray[indexOfMinimum].y, tempH = rectangleArray[indexOfMinimum].h;
+				rectangleArray[indexOfMinimum].y = rectangleArray[sortIterator].y;
+				rectangleArray[indexOfMinimum].h = rectangleArray[sortIterator].h;
+				rectangleArray[sortIterator].y = tempY;
+				rectangleArray[sortIterator].h = tempH;
+				barChart.updateSwapCount(++swapCount);
+			}
+			currentRectangle = 0;
+			++sortIterator;
+		}
+	}
+
+	/*  BUBBLE SORT
 	if (sortIterator < numberOfRectangles)
 	{
 		if (currentRectangle < numberOfRectangles - sortIterator - 1)
@@ -35,8 +72,9 @@ void SortingState::update(BarChart& barChart)
 			swapOccurred = false;
 		}
 	}
+	*/
 
-	if (sortIterator == numberOfRectangles)
+	if (sortIterator == numberOfRectangles || (indexOfMinimum > 0 && sortIterator == numberOfRectangles - 1))
 	{
 		changeStateStatus = true;
 	}

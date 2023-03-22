@@ -13,7 +13,7 @@ SDL_Renderer* RenderWindow::getRenderer() const
     return renderer.get();
 }
 
-// Render a rectangle array
+// Render an array of rectangles
 void RenderWindow::renderArray(const SDL_Rect* rectangleArray) const
 {
     SDL_SetRenderDrawColor(renderer.get(), defaultColor.r, defaultColor.g, defaultColor.b, defaultColor.a);

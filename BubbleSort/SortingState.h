@@ -9,7 +9,7 @@
 class SortingState final : public BarChartState
 {
 private:
-	int sortIterator = 0, currentRectangle = 0, swapCount = 0;
+	int sortIterator = 0, currentRectangle = 0, swapCount = 0, indexOfMinimum = 0;
 	bool swapOccurred = false;
 	SDL_Rect* rectangleArray = nullptr;
 
