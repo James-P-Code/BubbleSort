@@ -1,16 +1,16 @@
 #pragma once
 
 #include "BarChartState.h"
-#include "SortAlgorithm.h"
 
 class SortingState final : public BarChartState
 {
+public:
+	SortingState() = delete;
+	SortingState(SortAlgorithm::SortType& sortType);
+
 private:
-	int sortIterator = 0, currentRectangle = 0, swapCount = 0, indexOfMinimum = 0;
-	bool swapOccurred = false;
-	SDL_Rect* rectangleArray = nullptr;
-	SortAlgorithm sortAlgorithm;
-	SortAlgorithm::SortType sortType;
+	SDL_Rect textDisplayRect = { 10, 10, 0, 0 };
+	SDL_Color textColor = { 111, 245, 66, 255 };
 
 	void update(BarChart& barChart) override;
 	void render(RenderWindow& renderWindow, BarChart& barChart, Text& text) override;

@@ -35,7 +35,17 @@ void UnsortedState::handleEvent(SDL_Event& event)
 {
 	if (event.type == SDL_KEYDOWN)
 	{
-		changeStateStatus = true;
+		switch (event.key.keysym.sym)
+		{
+			case SDLK_1:
+				sortType = SortAlgorithm::SortType::BubbleSort;
+				changeStateStatus = true;
+				break;
+			case SDLK_2:
+				sortType = SortAlgorithm::SortType::SelectionSort;
+				changeStateStatus = true;
+				break;
+		}
 	}
 }
 
@@ -43,6 +53,6 @@ void UnsortedState::changeState(SortManager& sortManager)
 {
 	if (changeStateStatus)
 	{
-		sortManager.setState(std::make_unique<SortingState>());
+		sortManager.setState(std::make_unique<SortingState>(sortType));
 	}
 }

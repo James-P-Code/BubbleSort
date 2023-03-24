@@ -43,7 +43,7 @@ void Text::createAtlas(SDL_Renderer* renderer)
 	atlasTexture = std::unique_ptr<SDL_Texture, InvokeDestroy>(SDL_CreateTextureFromSurface(renderer, surface.get())); // create the full atlas texture
 }
 
-void Text::render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect& destRect)
+void Text::render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect destRect)
 {
 	SDL_SetTextureColorMod(atlasTexture.get(), textColor.r, textColor.g, textColor.b);
 

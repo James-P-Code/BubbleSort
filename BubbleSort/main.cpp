@@ -1,6 +1,6 @@
 //   Author:  James Pochas
 //   Date:  3/12/23
-//   A visualization of a bubble sort, using SDL2.  To start the sort just press any keyboard key.
+//   A sort visualizer.  Planning to add a main menu, but for now press 1 for bubble sort, or 2 for selection sort
 
 #include "SDL.h"
 #include "Constants.h"

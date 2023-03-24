@@ -1,13 +1,26 @@
 #include "SortAlgorithm.h"
 
-void SortAlgorithm::bubbleSort(BarChart& barChart)
+void SortAlgorithm::sort(SortAlgorithm::SortType& sortType, BarChart& barChart)
 {
-	swapStatus = false;
-
 	if (!rectangleArray)
 	{
 		rectangleArray = barChart.getChart().data();
 	}
+
+	switch (sortType)
+	{
+		case SortType::BubbleSort:
+			bubbleSort(barChart);
+			break;
+		case SortType::SelectionSort:
+			selectionSort(barChart);
+			break;
+	}
+}
+
+void SortAlgorithm::bubbleSort(BarChart& barChart)
+{
+	swapStatus = false;
 
 	if (sortIterator < numberOfRectangles)
 	{
@@ -23,7 +36,8 @@ void SortAlgorithm::bubbleSort(BarChart& barChart)
 				swapStatus = true;
 				barChart.updateSwapCount(++swapCount);
 			}
-			currentRectangle++;
+
+			++currentRectangle;
 		}
 		else
 		{
@@ -34,6 +48,46 @@ void SortAlgorithm::bubbleSort(BarChart& barChart)
 	}
 
 	if (sortIterator == numberOfRectangles)
+	{
+		sortStatus = true;
+	}
+}
+
+void SortAlgorithm::selectionSort(BarChart& barChart)
+{
+	if (sortIterator < numberOfRectangles - 1)
+	{
+		if (currentRectangle < sortIterator + 1)
+		{
+			indexOfMinimum = sortIterator;
+			currentRectangle = sortIterator + 1;
+		}
+
+		if (currentRectangle < numberOfRectangles)
+		{
+			if (rectangleArray[currentRectangle].y > rectangleArray[indexOfMinimum].y)
+			{
+				indexOfMinimum = currentRectangle;
+			}
+			++currentRectangle;
+		}
+		else
+		{
+			if (indexOfMinimum != 1)
+			{
+				int tempY = rectangleArray[indexOfMinimum].y, tempH = rectangleArray[indexOfMinimum].h;
+				rectangleArray[indexOfMinimum].y = rectangleArray[sortIterator].y;
+				rectangleArray[indexOfMinimum].h = rectangleArray[sortIterator].h;
+				rectangleArray[sortIterator].y = tempY;
+				rectangleArray[sortIterator].h = tempH;
+				barChart.updateSwapCount(++swapCount);
+			}
+			currentRectangle = 0;
+			++sortIterator;
+		}
+	}
+
+	if (indexOfMinimum > 0 && sortIterator == numberOfRectangles - 1)
 	{
 		sortStatus = true;
 	}
