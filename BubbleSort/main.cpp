@@ -1,6 +1,6 @@
 //   Author:  James Pochas
 //   Date:  3/12/23
-//   A sort visualizer.  Planning to add a main menu, but for now press 1 for bubble sort, or 2 for selection sort
+//   A sort visualizer.  Planning to add a main menu, but for now press 1 for bubble sort, or 2 for selection sort, 3 for insertion sort
 
 #include "SDL.h"
 #include "Constants.h"
@@ -31,7 +31,7 @@ int main(int argc, char* argv[])
 		sm.changeState();
 
 		frameEnd = SDL_GetTicks() - frameStart;
-
+		
 		if (frameEnd < frameDelay) // cap the fps to the maxFPS constant value
 		{
 			SDL_Delay(frameDelay - frameEnd);

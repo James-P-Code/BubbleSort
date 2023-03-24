@@ -11,6 +11,7 @@ public:
 private:
 	SDL_Rect textDisplayRect = { 10, 10, 0, 0 };
 	SDL_Color textColor = { 111, 245, 66, 255 };
+	int rectangleToHighlight = 0;
 
 	void update(BarChart& barChart) override;
 	void render(RenderWindow& renderWindow, BarChart& barChart, Text& text) override;

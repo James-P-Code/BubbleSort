@@ -2,10 +2,7 @@
 #include "SortManager.h"
 
 // Use this constructor to reset the bar chart
-UnsortedState::UnsortedState(const bool resetBarChart)
-{
-	this->resetBarChart = resetBarChart;
-}
+UnsortedState::UnsortedState(const bool resetBarChart) : resetBarChart(resetBarChart) {}
 
 void UnsortedState::update(BarChart& barChart) 
 {
@@ -43,6 +40,10 @@ void UnsortedState::handleEvent(SDL_Event& event)
 				break;
 			case SDLK_2:
 				sortType = SortAlgorithm::SortType::SelectionSort;
+				changeStateStatus = true;
+				break;
+			case SDLK_3:
+				sortType = SortAlgorithm::SortType::InsertionSort;
 				changeStateStatus = true;
 				break;
 		}

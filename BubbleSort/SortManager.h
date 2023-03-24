@@ -5,9 +5,6 @@
 #include "SortedState.h"
 #include <memory>
 
-class Text;
-class BarChart;
-class RenderWindow;
 class UnsortedState;
 class SortingState;
 class SortedState;

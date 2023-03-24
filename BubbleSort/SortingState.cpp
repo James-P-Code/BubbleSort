@@ -18,8 +18,6 @@ void SortingState::update(BarChart& barChart)
 
 void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& text) 
 {
-	int rectangleToHighlight;
-
 	if (sortAlgorithm.getCurrentRectangle() > 0 && !sortAlgorithm.swapOccurred())
 	{
 		rectangleToHighlight = sortAlgorithm.getCurrentRectangle() - 1;
@@ -29,10 +27,13 @@ void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& 
 		rectangleToHighlight = sortAlgorithm.getCurrentRectangle();
 	}
 
+	SDL_Rect sortNameRect = { 10, 30, 0, 0 };
+
 	renderWindow.clearRenderer();
 	renderWindow.renderArray(barChart.getChart().data());
 	renderWindow.highlightRectangle(barChart.getChart().at(rectangleToHighlight));
 	text.render(renderWindow.getRenderer(), "Swap Count: " + std::to_string(barChart.getSwapCount()), textColor, textDisplayRect);
+	text.render(renderWindow.getRenderer(), sortAlgorithm.getSortName(), textColor, sortNameRect);
 	renderWindow.updateWindow();
 }
 
