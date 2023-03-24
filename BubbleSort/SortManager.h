@@ -1,13 +1,13 @@
 #pragma once
 
-#include "RenderWindow.h"
-#include "BarChart.h"
-#include "Text.h"
 #include "UnsortedState.h"
 #include "SortingState.h"
 #include "SortedState.h"
 #include <memory>
 
+class Text;
+class BarChart;
+class RenderWindow;
 class UnsortedState;
 class SortingState;
 class SortedState;
