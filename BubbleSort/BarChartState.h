@@ -2,12 +2,13 @@
 
 #include "SDL.h"
 #include "Constants.h"
+#include "BarChart.h"
+#include "Text.h"
+#include "RenderWindow.h"
+#include <iostream>
 #include <string>
 
 class SortManager;
-class BarChart;
-class Text;
-class RenderWindow;
 
 class BarChartState
 {

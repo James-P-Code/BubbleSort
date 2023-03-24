@@ -1,20 +1,30 @@
 #include "SortingState.h"
+#include "SortManager.h"
 
-/* this is a bubble sort that does 1 step at a time.  it's done this way because we need to render after every step.
+/* this is a sort that does 1 step at a time.  it's done this way because we need to render after every step.
 *  we also need to handle events while still doing the sort so the window doesn't become unresponsive, so doing only
 *  1 step at a time allows all of the rendering and event handling to happen as needed    */
 void SortingState::update(BarChart& barChart)
 {
-
-	
 	swapCount = barChart.getSwapCount();
+	sortType = SortAlgorithm::SortType::BubbleSort;
 
 	if (!rectangleArray)
 	{
 		rectangleArray = barChart.getChart().data();
 	}
 
-	// SELECTION SORT
+	if (sortType == SortAlgorithm::SortType::BubbleSort)
+	{
+		sortAlgorithm.bubbleSort(barChart);
+	}
+
+
+	/* SELECTION SORT 
+	if (!rectangleArray)
+	{
+		rectangleArray = barChart.getChart().data();
+	}
 	if (sortIterator < numberOfRectangles - 1)
 	{
 
@@ -47,34 +57,15 @@ void SortingState::update(BarChart& barChart)
 			++sortIterator;
 		}
 	}
-
-	/*  BUBBLE SORT
-	if (sortIterator < numberOfRectangles)
-	{
-		if (currentRectangle < numberOfRectangles - sortIterator - 1)
-		{
-			if (rectangleArray[currentRectangle].y < rectangleArray[currentRectangle + 1].y)
-			{
-				int tempY = rectangleArray[currentRectangle].y, tempH = rectangleArray[currentRectangle].h;
-				rectangleArray[currentRectangle].y = rectangleArray[currentRectangle + 1].y;
-				rectangleArray[currentRectangle].h = rectangleArray[currentRectangle + 1].h;
-				rectangleArray[currentRectangle + 1].y = tempY;
-				rectangleArray[currentRectangle + 1].h = tempH;
-				swapOccurred = true;
-				barChart.updateSwapCount(++swapCount);
-			}
-			currentRectangle++;
-		}
-		else
-		{
-			currentRectangle = 0;
-			sortIterator++;
-			swapOccurred = false;
-		}
-	}
 	*/
 
+	/*
 	if (sortIterator == numberOfRectangles || (indexOfMinimum > 0 && sortIterator == numberOfRectangles - 1))
+	{
+		changeStateStatus = true;
+	}
+	*/
+	if (sortAlgorithm.isSorted())
 	{
 		changeStateStatus = true;
 	}
@@ -86,7 +77,7 @@ void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& 
 	SDL_Color textColor = { 111, 245, 66, 255 };
 	renderWindow.clearRenderer();
 	renderWindow.renderArray(rectangleArray);
-	renderWindow.highlightRectangle(swapOccurred ? rectangleArray[currentRectangle] : rectangleArray[currentRectangle - 1]);
+	renderWindow.highlightRectangle(sortAlgorithm.swapOccurred() ? rectangleArray[sortAlgorithm.getCurrentRectangle()] : rectangleArray[sortAlgorithm.getCurrentRectangle() - 1]);
 	text.render(renderWindow.getRenderer(), "Swap Count: " + std::to_string(barChart.getSwapCount()), textColor, textDisplayRect);
 	renderWindow.updateWindow();
 }

@@ -3,11 +3,14 @@
 #include "RenderWindow.h"
 #include "BarChart.h"
 #include "Text.h"
-#include "MenuState.h"
 #include "UnsortedState.h"
 #include "SortingState.h"
 #include "SortedState.h"
 #include <memory>
+
+class UnsortedState;
+class SortingState;
+class SortedState;
 
 class SortManager final
 {

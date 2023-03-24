@@ -4,10 +4,23 @@
 #include "Constants.h"
 #include "BarChart.h"
 
-class BarChart;
-
-class SortAlgorithm
+class SortAlgorithm final
 {
 public:
-	virtual void performSort(BarChart& barChart, SDL_Renderer* renderer) = 0;
+	enum class SortType
+	{
+		BubbleSort = 1,
+		SelectionSort = 2
+	};
+
+	void bubbleSort(BarChart&);
+	const bool isSorted() const;
+	const bool swapOccurred() const;
+	const int getCurrentRectangle() const;
+
+private:
+	int currentRectangle = 0, sortIterator = 0, swapCount = 0;
+	bool swapStatus, sortStatus = false;
+	SDL_Rect* rectangleArray = nullptr;
 };
+

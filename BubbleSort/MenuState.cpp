@@ -1,4 +1,5 @@
 #include "MenuState.h"
+#include "SortManager.h"
 
 void MenuState::update(BarChart& barChart) {}
 

@@ -1,4 +1,5 @@
 #include "SortedState.h"
+#include "SortManager.h"
 
 void SortedState::update(BarChart& barChart) {}
 

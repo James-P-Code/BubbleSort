@@ -1,10 +1,6 @@
 #pragma once
 
 #include "BarChartState.h"
-#include "SortManager.h"
-#include "BarChart.h"
-#include "Text.h"
-#include "RenderWindow.h"
 
 class SortedState final : public BarChartState
 {
