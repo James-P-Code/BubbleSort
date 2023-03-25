@@ -2,7 +2,6 @@
 
 #include <stack>
 #include "SortAlgorithm.h"
-#include <iostream>
 
 class QuickSort : public SortAlgorithm
 {
@@ -11,9 +10,8 @@ public:
 
 private:
 	std::stack<std::pair<int, int>> qsStack;
-	int startIndex = 0, endIndex = numberOfRectangles - 1, pivot, pIndex;
+	int startIndex = 0, endIndex = numberOfRectangles - 1, pIndex, pivotRectY;
 	bool newIteration = true;
-	SDL_Rect pivotRect;
 
 	void sort(BarChart& barChart) override;
 };

@@ -26,6 +26,7 @@ void SelectionSort::sort(BarChart& barChart)
 			{
 				indexOfMinimum = currentRectangle;
 			}
+			highlightRectangle = currentRectangle;
 			++currentRectangle;
 		}
 		else
@@ -37,6 +38,7 @@ void SelectionSort::sort(BarChart& barChart)
 			}
 			currentRectangle = 0;
 			++sortIterator;
+			highlightRectangle = currentRectangle;
 		}
 	}
 

@@ -24,11 +24,13 @@ void InsertionSort::sort(BarChart& barChart)
 			keyRect = rectangleArray[sortIterator];
 			currentRectangle = sortIterator - 1;
 			newIteration = false;
+			highlightRectangle = currentRectangle;
 		}
 
 		if (currentRectangle >= 0 && rectangleArray[currentRectangle].y < keyRect.y)
 		{
 			swapRectangles(currentRectangle + 1, currentRectangle);
+			highlightRectangle = currentRectangle;
 			currentRectangle--;
 			barChart.updateSwapCount(swapCount);
 		}

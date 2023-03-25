@@ -33,6 +33,8 @@ void BubbleSort::sort(BarChart& barChart)
 			sortIterator++;
 			swapStatus = false;
 		}
+
+		highlightRectangle = currentRectangle;
 	}
 
 	if (sortIterator == numberOfRectangles)

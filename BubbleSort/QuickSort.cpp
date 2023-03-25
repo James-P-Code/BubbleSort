@@ -21,21 +21,22 @@ void QuickSort::sort(BarChart& barChart)
 			endIndex = qsStack.top().second;
 			qsStack.pop();
 
-			pivotRect = rectangleArray[endIndex];
+			pivotRectY = rectangleArray[endIndex].y;
 			sortIterator = startIndex;
 			pIndex = startIndex;
+		//	highlightRectangle = sortIterator;
 
 			newIteration = false;
 		}
 
 		if (sortIterator < endIndex)
 		{
-			if (rectangleArray[sortIterator].y >= pivotRect.y)
+			if (rectangleArray[sortIterator].y >= pivotRectY)
 			{
 				swapRectangles(sortIterator, pIndex);
 				barChart.updateSwapCount(swapCount);
 				++pIndex;
-				currentRectangle = sortIterator;
+				highlightRectangle = sortIterator;
 			}
 			++sortIterator;
 		}
@@ -43,7 +44,7 @@ void QuickSort::sort(BarChart& barChart)
 		{
 			swapRectangles(pIndex, endIndex);
 			barChart.updateSwapCount(swapCount);
-			currentRectangle = endIndex;
+			highlightRectangle = pIndex;
 
 			if (pIndex - 1 > startIndex)
 			{

@@ -50,6 +50,10 @@ void UnsortedState::handleEvent(SDL_Event& event)
 				sortType = SortAlgorithm::SortType::QuickSort;
 				changeStateStatus = true;
 				break;
+			case SDLK_5:
+				sortType = SortAlgorithm::SortType::MergeSort;
+				changeStateStatus = true;
+				break;
 		}
 	}
 }

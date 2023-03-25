@@ -16,19 +16,21 @@ public:
 		BubbleSort = 1,
 		SelectionSort = 2,
 		InsertionSort = 3,
-		QuickSort = 4
+		QuickSort = 4,
+		MergeSort = 5
 	};
 
 	virtual void sort(BarChart& barChart) = 0;
 	const bool isSorted() const;
 	const bool swapOccurred() const;
 	const int getCurrentRectangle() const;
+	const int getHighlightRectangle() const;
 	const std::string& getSortName() const;
 
 protected:
 	SDL_Rect* rectangleArray = nullptr;
 	bool sortStatus = false, swapStatus = false;
-	int currentRectangle = 0, swapCount = 0, sortIterator = 0;
+	int currentRectangle = 0, swapCount = 0, sortIterator = 0, highlightRectangle = 0;
 	std::string sortName;
 
 	void setArray(SDL_Rect* rectangleArray);

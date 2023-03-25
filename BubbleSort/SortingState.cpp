@@ -17,6 +17,9 @@ SortingState::SortingState(const SortAlgorithm::SortType& sortType)
 		case SortAlgorithm::SortType::QuickSort:
 			sortAlgorithm = std::make_unique<QuickSort>();
 			break;
+		case SortAlgorithm::SortType::MergeSort:
+			sortAlgorithm = std::make_unique<MergeSort>();
+			break;
 	}
 }
 
@@ -45,7 +48,7 @@ void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& 
 
 	renderWindow.clearRenderer();
 	renderWindow.renderArray(barChart.getChart().data());
-	renderWindow.highlightRectangle(barChart.getChart().at(rectangleToHighlight));
+	renderWindow.highlightRectangle(barChart.getChart().at(sortAlgorithm->getHighlightRectangle()));
 	text.render(renderWindow.getRenderer(), "Swap Count: " + std::to_string(barChart.getSwapCount()), textColor, textDisplayRect);
 	text.render(renderWindow.getRenderer(), sortAlgorithm->getSortName(), textColor, sortNameRect);
 	renderWindow.updateWindow();

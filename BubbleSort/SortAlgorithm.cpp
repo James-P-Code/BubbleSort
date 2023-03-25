@@ -20,6 +20,11 @@ const int SortAlgorithm::getCurrentRectangle() const
 	return currentRectangle;
 }
 
+const int SortAlgorithm::getHighlightRectangle() const
+{
+	return highlightRectangle;
+}
+
 const std::string& SortAlgorithm::getSortName() const
 {
 	return sortName;
