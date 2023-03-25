@@ -54,6 +54,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TTFSubSystem", "TTFSubSyste
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SortAlgorithm", "SortAlgorithm", "{CEDDE8E7-E3FF-48FB-A7B7-E3895752777D}"
 	ProjectSection(SolutionItems) = preProject
+		BubbleSort\BubbleSort.cpp = BubbleSort\BubbleSort.cpp
+		BubbleSort\BubbleSort.h = BubbleSort\BubbleSort.h
+		BubbleSort\InsertionSort.cpp = BubbleSort\InsertionSort.cpp
+		BubbleSort\InsertionSort.h = BubbleSort\InsertionSort.h
+		BubbleSort\QuickSort.cpp = BubbleSort\QuickSort.cpp
+		BubbleSort\QuickSort.h = BubbleSort\QuickSort.h
+		BubbleSort\SelectionSort.cpp = BubbleSort\SelectionSort.cpp
+		BubbleSort\SelectionSort.h = BubbleSort\SelectionSort.h
 		BubbleSort\SortAlgorithm.cpp = BubbleSort\SortAlgorithm.cpp
 		BubbleSort\SortAlgorithm.h = BubbleSort\SortAlgorithm.h
 	EndProjectSection

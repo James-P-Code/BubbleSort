@@ -46,6 +46,10 @@ void UnsortedState::handleEvent(SDL_Event& event)
 				sortType = SortAlgorithm::SortType::InsertionSort;
 				changeStateStatus = true;
 				break;
+			case SDLK_4:
+				sortType = SortAlgorithm::SortType::QuickSort;
+				changeStateStatus = true;
+				break;
 		}
 	}
 }

@@ -14,6 +14,9 @@ SortingState::SortingState(const SortAlgorithm::SortType& sortType)
 		case SortAlgorithm::SortType::InsertionSort:
 			sortAlgorithm = std::make_unique<InsertionSort>();
 			break;
+		case SortAlgorithm::SortType::QuickSort:
+			sortAlgorithm = std::make_unique<QuickSort>();
+			break;
 	}
 }
 

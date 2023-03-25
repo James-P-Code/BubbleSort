@@ -147,6 +147,7 @@
     <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="RenderWindow.cpp" />
     <ClCompile Include="SDLSubSystem.cpp" />
     <ClCompile Include="SelectionSort.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Constants.h" />
     <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="MenuState.h" />
+    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="RenderWindow.h" />
     <ClInclude Include="SDLSubSystem.h" />
     <ClInclude Include="SelectionSort.h" />

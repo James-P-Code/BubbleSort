@@ -15,7 +15,8 @@ public:
 		None = 0,
 		BubbleSort = 1,
 		SelectionSort = 2,
-		InsertionSort = 3
+		InsertionSort = 3,
+		QuickSort = 4
 	};
 
 	virtual void sort(BarChart& barChart) = 0;
