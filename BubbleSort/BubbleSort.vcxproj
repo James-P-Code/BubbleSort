@@ -143,14 +143,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BarChart.cpp" />
+    <ClCompile Include="BubbleSort.cpp" />
+    <ClCompile Include="InsertionSort.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="RenderWindow.cpp" />
     <ClCompile Include="SDLSubSystem.cpp" />
-    <ClCompile Include="SortAlgorithm.cpp" />
+    <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="SortedState.cpp" />
     <ClCompile Include="SortingState.cpp" />
     <ClCompile Include="SortManager.cpp" />
+    <ClCompile Include="SortAlgorithm.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="TTFSubSystem.cpp" />
     <ClCompile Include="UnsortedState.cpp" />
@@ -158,14 +161,17 @@
   <ItemGroup>
     <ClInclude Include="BarChart.h" />
     <ClInclude Include="BarChartState.h" />
+    <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="Constants.h" />
+    <ClInclude Include="InsertionSort.h" />
     <ClInclude Include="MenuState.h" />
     <ClInclude Include="RenderWindow.h" />
     <ClInclude Include="SDLSubSystem.h" />
-    <ClInclude Include="SortAlgorithm.h" />
+    <ClInclude Include="SelectionSort.h" />
     <ClInclude Include="SortedState.h" />
     <ClInclude Include="SortingState.h" />
     <ClInclude Include="SortManager.h" />
+    <ClInclude Include="SortAlgorithm.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TTFSubSystem.h" />
     <ClInclude Include="UnsortedState.h" />

@@ -16,7 +16,7 @@ public:
 	void render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect destRect);
 
 private:
-	struct InvokeDestroy
+	struct InvokeDestroy final
 	{
 		void operator()(TTF_Font* p) const { TTF_CloseFont(p); }
 		void operator()(SDL_Texture* p) const { SDL_DestroyTexture(p); }

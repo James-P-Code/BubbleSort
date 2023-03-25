@@ -1,17 +1,22 @@
 #pragma once
 
 #include "BarChartState.h"
+#include "BubbleSort.h"
+#include "SelectionSort.h"
+#include "InsertionSort.h"
+#include <memory>
 
 class SortingState final : public BarChartState
 {
 public:
 	SortingState() = delete;
-	SortingState(SortAlgorithm::SortType& sortType);
+	SortingState(const SortAlgorithm::SortType& sortType);
 
 private:
 	SDL_Rect textDisplayRect = { 10, 10, 0, 0 };
 	SDL_Color textColor = { 111, 245, 66, 255 };
 	int rectangleToHighlight = 0;
+	std::unique_ptr<SortAlgorithm> sortAlgorithm;
 
 	void update(BarChart& barChart) override;
 	void render(RenderWindow& renderWindow, BarChart& barChart, Text& text) override;

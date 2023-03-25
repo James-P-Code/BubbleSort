@@ -17,7 +17,7 @@ public:
 	void clearRenderer() const;
 
 private:
-	struct InvokeDestroy
+	struct InvokeDestroy final
 	{
 		void operator()(SDL_Window* p) const { SDL_DestroyWindow(p); }
 		void operator()(SDL_Renderer* p) const { SDL_DestroyRenderer(p); }

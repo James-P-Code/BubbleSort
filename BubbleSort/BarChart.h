@@ -1,12 +1,11 @@
 #pragma once
 
 #include "SDL.h"
+#include "Constants.h"
 #include <random>
 #include <algorithm>
 #include <memory>
 #include <array>
-#include "Constants.h"
-#include <iostream>
 
 class BarChart final
 {
