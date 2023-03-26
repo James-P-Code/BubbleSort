@@ -44,6 +44,6 @@ void SelectionSort::sort(BarChart& barChart)
 
 	if (indexOfMinimum > 0 && sortIterator == numberOfRectangles - 1)
 	{
-		sortStatus = true;
+		sortedStatus = true;
 	}
 }

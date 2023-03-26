@@ -121,6 +121,6 @@ void MergeSort::merge(int from, int mid, int to, BarChart& barChart)
 
 	if (m > numberOfRectangles)
 	{
-		sortStatus = true;
+		sortedStatus = true;
 	}
 }

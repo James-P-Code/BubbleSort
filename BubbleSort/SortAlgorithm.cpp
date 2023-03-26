@@ -2,7 +2,7 @@
 
 const bool SortAlgorithm::isSorted() const
 {
-	return sortStatus;
+	return sortedStatus;
 }
 
 const std::string& SortAlgorithm::getSortName() const

@@ -23,6 +23,9 @@ SortingState::SortingState(const SortAlgorithm::SortType& sortType)
 		case SortAlgorithm::SortType::CocktailShakerSort:
 			sortAlgorithm = std::make_unique<CocktailShakerSort>();
 			break;
+		case SortAlgorithm::SortType::RadixSort:
+			sortAlgorithm = std::make_unique<RadixSort>();
+			break;
 	}
 }
 

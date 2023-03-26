@@ -1,7 +1,7 @@
 //   Author:  James Pochas
 //   Date:  3/12/23
-//   A sort visualizer.  Planning to add a main menu, but for now press 1 for bubble sort, or 2 for selection sort, 3 for insertion sort
-//   4 for quick sort, 5 for merge sort
+//   A sort visualizer.  Planning to add a main menu, but for now press 1 for bubble sort, 2 for selection sort, 3 for insertion sort
+//   4 for quick sort, 5 for merge sort, 6 for cocktail shaker sort, 7 for radix sort
 
 #include "SDL.h"
 #include "Constants.h"

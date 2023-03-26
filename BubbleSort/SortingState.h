@@ -7,6 +7,7 @@
 #include "QuickSort.h"
 #include "MergeSort.h"
 #include "CocktailShakerSort.h"
+#include "RadixSort.h"
 #include <memory>
 
 class SortingState final : public BarChartState

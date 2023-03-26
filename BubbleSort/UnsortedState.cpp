@@ -58,6 +58,10 @@ void UnsortedState::handleEvent(SDL_Event& event)
 				sortType = SortAlgorithm::SortType::CocktailShakerSort;
 				changeStateStatus = true;
 				break;
+			case SDLK_7:
+				sortType = SortAlgorithm::SortType::RadixSort;
+				changeStateStatus = true;
+				break;
 		}
 	}
 }

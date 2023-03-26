@@ -34,7 +34,7 @@ void CocktailShakerSort::sort(BarChart& barChart)
 	{
 		if (!swapStatus)
 		{
-			sortStatus = true;
+			sortedStatus = true;
 		}
 
 		--sortIterator;
