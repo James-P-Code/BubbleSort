@@ -11,7 +11,7 @@ void MergeSort::sort(BarChart& barChart)
 {
 	if (!rectangleArray)
 	{
-		rectangleArray = barChart.getChart().data();
+		setArray(barChart.getChart().data());
 
 		for (int i = 0; i < numberOfRectangles; ++i)
 		{

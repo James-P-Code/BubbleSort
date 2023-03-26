@@ -17,7 +17,8 @@ public:
 		SelectionSort = 2,
 		InsertionSort = 3,
 		QuickSort = 4,
-		MergeSort = 5
+		MergeSort = 5,
+		CocktailShakerSort = 6
 	};
 
 	virtual void sort(BarChart& barChart) = 0;

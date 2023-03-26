@@ -20,6 +20,9 @@ SortingState::SortingState(const SortAlgorithm::SortType& sortType)
 		case SortAlgorithm::SortType::MergeSort:
 			sortAlgorithm = std::make_unique<MergeSort>();
 			break;
+		case SortAlgorithm::SortType::CocktailShakerSort:
+			sortAlgorithm = std::make_unique<CocktailShakerSort>();
+			break;
 	}
 }
 
@@ -35,15 +38,6 @@ void SortingState::update(BarChart& barChart)
 
 void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& text) 
 {
-	if (sortAlgorithm->getCurrentRectangle() > 0 && !sortAlgorithm->swapOccurred())
-	{
-		rectangleToHighlight = sortAlgorithm->getCurrentRectangle() - 1;
-	}
-	else
-	{
-		rectangleToHighlight = sortAlgorithm->getCurrentRectangle();
-	}
-
 	SDL_Rect sortNameRect = { 10, 30, 0, 0 };
 
 	renderWindow.clearRenderer();

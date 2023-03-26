@@ -4,7 +4,7 @@ RenderWindow::RenderWindow()
 {
     constexpr int driverIndex = -1;
 
-    window = std::unique_ptr<SDL_Window, InvokeDestroy>(SDL_CreateWindow("Bubblesort Visualization", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, SDL_WINDOW_SHOWN));
+    window = std::unique_ptr<SDL_Window, InvokeDestroy>(SDL_CreateWindow("Sort Visualizer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, SDL_WINDOW_SHOWN));
     renderer = std::unique_ptr<SDL_Renderer, InvokeDestroy>(SDL_CreateRenderer(window.get(), driverIndex, SDL_RENDERER_PRESENTVSYNC));
 }
 
