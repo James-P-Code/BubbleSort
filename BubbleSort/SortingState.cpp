@@ -5,27 +5,13 @@ SortingState::SortingState(const SortAlgorithm::SortType& sortType)
 {
 	switch (sortType)
 	{
-		case SortAlgorithm::SortType::BubbleSort:
-			sortAlgorithm = std::make_unique<BubbleSort>();
-			break;
-		case SortAlgorithm::SortType::SelectionSort:
-			sortAlgorithm = std::make_unique<SelectionSort>();
-			break;
-		case SortAlgorithm::SortType::InsertionSort:
-			sortAlgorithm = std::make_unique<InsertionSort>();
-			break;
-		case SortAlgorithm::SortType::QuickSort:
-			sortAlgorithm = std::make_unique<QuickSort>();
-			break;
-		case SortAlgorithm::SortType::MergeSort:
-			sortAlgorithm = std::make_unique<MergeSort>();
-			break;
-		case SortAlgorithm::SortType::CocktailShakerSort:
-			sortAlgorithm = std::make_unique<CocktailShakerSort>();
-			break;
-		case SortAlgorithm::SortType::RadixSort:
-			sortAlgorithm = std::make_unique<RadixSort>();
-			break;
+		case SortAlgorithm::SortType::BubbleSort: sortAlgorithm = std::make_unique<BubbleSort>(); break;
+		case SortAlgorithm::SortType::SelectionSort: sortAlgorithm = std::make_unique<SelectionSort>(); break;
+		case SortAlgorithm::SortType::InsertionSort: sortAlgorithm = std::make_unique<InsertionSort>(); break;
+		case SortAlgorithm::SortType::QuickSort: sortAlgorithm = std::make_unique<QuickSort>(); break;
+		case SortAlgorithm::SortType::MergeSort: sortAlgorithm = std::make_unique<MergeSort>(); break;
+		case SortAlgorithm::SortType::CocktailShakerSort: sortAlgorithm = std::make_unique<CocktailShakerSort>(); break;
+		case SortAlgorithm::SortType::RadixSort: sortAlgorithm = std::make_unique<RadixSort>(); break;
 	}
 }
 

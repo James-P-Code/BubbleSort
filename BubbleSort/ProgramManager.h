@@ -5,10 +5,6 @@
 #include "SortedState.h"
 #include <memory>
 
-class UnsortedState;
-class SortingState;
-class SortedState;
-
 class ProgramManager final
 {
 public:

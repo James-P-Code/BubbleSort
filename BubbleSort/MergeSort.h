@@ -2,10 +2,11 @@
 
 #include "SortAlgorithm.h"
 
-class MergeSort : public SortAlgorithm
+class MergeSort final : public SortAlgorithm
 {
 public:
 	MergeSort();
+	virtual ~MergeSort() {};
 
 private:
 	void sort(BarChart& barChart) override;
@@ -18,4 +19,3 @@ private:
 	SDL_Rect tempArr[numberOfRectangles];
 	bool currentlyMerging = false, mergeStarted = false, mergeIteratorsSet = false, setTemp = true;
 };
-

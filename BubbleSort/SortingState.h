@@ -15,6 +15,7 @@ class SortingState final : public BarChartState
 public:
 	SortingState() = delete;
 	SortingState(const SortAlgorithm::SortType& sortType);
+	virtual ~SortingState() {};
 
 private:
 	SDL_Rect textDisplayRect = { 10, 10, 0, 0 };

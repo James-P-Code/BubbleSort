@@ -11,10 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RenderWindow", "RenderWindo
 		BubbleSort\RenderWindow.h = BubbleSort\RenderWindow.h
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SortManager", "SortManager", "{7C804530-628C-4466-AF28-DB2240D24565}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProgramManager", "ProgramManager", "{7C804530-628C-4466-AF28-DB2240D24565}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\SortManager.cpp = BubbleSort\SortManager.cpp
-		BubbleSort\SortManager.h = BubbleSort\SortManager.h
+		BubbleSort\ProgramManager.cpp = BubbleSort\ProgramManager.cpp
+		BubbleSort\ProgramManager.h = BubbleSort\ProgramManager.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BarChart", "BarChart", "{C0DD2007-1B9A-42A2-AE2B-81A1F4423CAC}"

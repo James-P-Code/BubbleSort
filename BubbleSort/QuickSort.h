@@ -3,10 +3,11 @@
 #include <stack>
 #include "SortAlgorithm.h"
 
-class QuickSort : public SortAlgorithm
+class QuickSort final : public SortAlgorithm
 {
 public:
 	QuickSort();
+	virtual ~QuickSort() {};
 
 private:
 	std::stack<std::pair<int, int>> qsStack;
@@ -15,4 +16,3 @@ private:
 
 	void sort(BarChart& barChart) override;
 };
-

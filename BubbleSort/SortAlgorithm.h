@@ -5,6 +5,7 @@
 #include "BarChart.h"
 #include <string>
 #include <vector>
+#include <iostream>
 
 /* All of the sorts are done in what I would call an iterative manner.  Because the overall program is driven by a loop
 *  in main() the sorts need to be done 1 step at a time.  This is because the window needs to be updated after every step
@@ -28,6 +29,7 @@ public:
 		RadixSort
 	};
 
+	virtual ~SortAlgorithm() {};
 	virtual void sort(BarChart& barChart) = 0;
 	const bool isSorted() const;
 	const std::string& getSortName() const;

@@ -5,6 +5,7 @@ class InsertionSort final : public SortAlgorithm
 {
 public:
 	InsertionSort();
+	virtual ~InsertionSort() {};
 
 private:
 	SDL_Rect keyRect;

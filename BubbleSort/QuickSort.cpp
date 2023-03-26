@@ -28,6 +28,8 @@ void QuickSort::sort(BarChart& barChart)
 			newIteration = false;
 		}
 
+		setRectanglesToHighlight(pivotIndex, greenHighlightColor);
+		setRectanglesToHighlight(sortIterator, greenHighlightColor);
 		setRectanglesToHighlight(startIndex, redHighlightColor);
 		setRectanglesToHighlight(endIndex, redHighlightColor);
 		if (sortIterator < endIndex)
@@ -43,6 +45,7 @@ void QuickSort::sort(BarChart& barChart)
 		else
 		{
 			swapRectangles(pivotIndex, endIndex);
+			setRectanglesToHighlight(pivotIndex, greenHighlightColor);
 
 			if (pivotIndex - 1 > startIndex)
 			{

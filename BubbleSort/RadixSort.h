@@ -2,10 +2,11 @@
 
 #include "SortAlgorithm.h"
 
-class RadixSort : public SortAlgorithm
+class RadixSort final : public SortAlgorithm
 {
 public:
 	RadixSort();
+	virtual ~RadixSort() {};
 
 private:
 	static constexpr int base = 10;

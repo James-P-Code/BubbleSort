@@ -33,34 +33,18 @@ void UnsortedState::handleEvent(SDL_Event& event)
 	{
 		switch (event.key.keysym.sym)
 		{
-			case SDLK_1:
-				sortType = SortAlgorithm::SortType::BubbleSort;
-				changeStateStatus = true;
-				break;
-			case SDLK_2:
-				sortType = SortAlgorithm::SortType::SelectionSort;
-				changeStateStatus = true;
-				break;
-			case SDLK_3:
-				sortType = SortAlgorithm::SortType::InsertionSort;
-				changeStateStatus = true;
-				break;
-			case SDLK_4:
-				sortType = SortAlgorithm::SortType::QuickSort;
-				changeStateStatus = true;
-				break;
-			case SDLK_5:
-				sortType = SortAlgorithm::SortType::MergeSort;
-				changeStateStatus = true;
-				break;
-			case SDLK_6:
-				sortType = SortAlgorithm::SortType::CocktailShakerSort;
-				changeStateStatus = true;
-				break;
-			case SDLK_7:
-				sortType = SortAlgorithm::SortType::RadixSort;
-				changeStateStatus = true;
-				break;
+			case SDLK_1: sortType = SortAlgorithm::SortType::BubbleSort; break;
+			case SDLK_2: sortType = SortAlgorithm::SortType::SelectionSort; break;
+			case SDLK_3: sortType = SortAlgorithm::SortType::InsertionSort; break;
+			case SDLK_4: sortType = SortAlgorithm::SortType::QuickSort; break;
+			case SDLK_5: sortType = SortAlgorithm::SortType::MergeSort; break;
+			case SDLK_6: sortType = SortAlgorithm::SortType::CocktailShakerSort; break;
+			case SDLK_7: sortType = SortAlgorithm::SortType::RadixSort; break;
+		}
+
+		if (sortType != SortAlgorithm::SortType::None)
+		{
+			changeStateStatus = true;
 		}
 	}
 }

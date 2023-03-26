@@ -2,10 +2,11 @@
 
 #include "SortAlgorithm.h"
 
-class CocktailShakerSort : public SortAlgorithm
+class CocktailShakerSort final : public SortAlgorithm
 {
 public:
 	CocktailShakerSort();
+	virtual ~CocktailShakerSort() {};
 
 private:
 	void sort(BarChart& barChart) override;

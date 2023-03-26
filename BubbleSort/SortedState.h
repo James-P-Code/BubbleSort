@@ -4,6 +4,9 @@
 
 class SortedState final : public BarChartState
 {
+public:
+	virtual ~SortedState() {};
+
 private:
 	SDL_Color flourishColor = { 143, 245, 42, 255 };  // RGBA color values
 	int currentRectangle = 0;
