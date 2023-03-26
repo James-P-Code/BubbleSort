@@ -2,7 +2,8 @@
 
 CocktailShakerSort::CocktailShakerSort()
 {
-	this->sortName = "Cocktail Shaker Sort";
+	sortName = "Cocktail Shaker Sort";
+	++sortIterator;
 }
 
 void CocktailShakerSort::sort(BarChart& barChart)
@@ -10,8 +11,6 @@ void CocktailShakerSort::sort(BarChart& barChart)
 	if (!rectangleArray)
 	{
 		setArray(barChart.getChart().data());
-
-		++sortIterator;
 	}
 
 	if (sortIterator == minIndexToSort || sortIterator == maxIndexToSort)
@@ -27,7 +26,7 @@ void CocktailShakerSort::sort(BarChart& barChart)
 			swapStatus = true;
 			barChart.updateSwapCount(swapCount);
 		}
-		highlightRectangle = sortIterator;
+		setRectanglesToHighlight(sortIterator, greenHighlightColor);
 		++sortIterator;
 	}
 
@@ -52,7 +51,7 @@ void CocktailShakerSort::sort(BarChart& barChart)
 			barChart.updateSwapCount(swapCount);
 		}
 		--sortIterator;
-		highlightRectangle = sortIterator;
+		setRectanglesToHighlight(sortIterator, greenHighlightColor);
 	}
 
 	if (sortIterator == minIndexToSort && !ascendingSort)
@@ -62,5 +61,6 @@ void CocktailShakerSort::sort(BarChart& barChart)
 		ascendingSort = true;
 	}
 
-
+	setRectanglesToHighlight(minIndexToSort, redHighlightColor);
+	setRectanglesToHighlight(maxIndexToSort - 1, redHighlightColor);
 }

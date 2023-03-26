@@ -42,7 +42,11 @@ void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& 
 
 	renderWindow.clearRenderer();
 	renderWindow.renderArray(barChart.getChart().data());
-	renderWindow.highlightRectangle(barChart.getChart().at(sortAlgorithm->getHighlightRectangle()));
+	for (const auto& rectangle : sortAlgorithm->getRectanglesToHighlight())
+	{
+		renderWindow.highlightRectangle(barChart.getChart().at(rectangle.first), rectangle.second);
+	}
+	sortAlgorithm->clearRectanglesToHighlight();
 	text.render(renderWindow.getRenderer(), "Swap Count: " + std::to_string(barChart.getSwapCount()), textColor, textDisplayRect);
 	text.render(renderWindow.getRenderer(), sortAlgorithm->getSortName(), textColor, sortNameRect);
 	renderWindow.updateWindow();

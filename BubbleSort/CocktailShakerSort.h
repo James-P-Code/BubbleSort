@@ -12,4 +12,3 @@ private:
 	bool ascendingSort = true;
 	int maxIndexToSort = numberOfRectangles, minIndexToSort = 0;
 };
-

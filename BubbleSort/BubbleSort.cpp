@@ -2,7 +2,7 @@
 
 BubbleSort::BubbleSort()
 {
-	this->sortName = "Bubble Sort";
+	sortName = "Bubble Sort";
 }
 
 void BubbleSort::sort(BarChart& barChart)
@@ -34,7 +34,7 @@ void BubbleSort::sort(BarChart& barChart)
 			swapStatus = false;
 		}
 
-		highlightRectangle = currentRectangle;
+		setRectanglesToHighlight(currentRectangle, greenHighlightColor);
 	}
 
 	if (sortIterator == numberOfRectangles)

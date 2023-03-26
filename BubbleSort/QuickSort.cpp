@@ -2,7 +2,7 @@
 
 QuickSort::QuickSort()
 {
-	this->sortName = "Quick Sort";
+	sortName = "Quick Sort";
 	qsStack.push(std::make_pair(startIndex, endIndex));
 }
 
@@ -24,11 +24,12 @@ void QuickSort::sort(BarChart& barChart)
 			pivotRectY = rectangleArray[endIndex].y;
 			sortIterator = startIndex;
 			pIndex = startIndex;
-		//	highlightRectangle = sortIterator;
 
 			newIteration = false;
 		}
 
+		setRectanglesToHighlight(startIndex, redHighlightColor);
+		setRectanglesToHighlight(endIndex, redHighlightColor);
 		if (sortIterator < endIndex)
 		{
 			if (rectangleArray[sortIterator].y >= pivotRectY)
@@ -36,7 +37,7 @@ void QuickSort::sort(BarChart& barChart)
 				swapRectangles(sortIterator, pIndex);
 				barChart.updateSwapCount(swapCount);
 				++pIndex;
-				highlightRectangle = sortIterator;
+				setRectanglesToHighlight(sortIterator, greenHighlightColor);
 			}
 			++sortIterator;
 		}
@@ -44,7 +45,6 @@ void QuickSort::sort(BarChart& barChart)
 		{
 			swapRectangles(pIndex, endIndex);
 			barChart.updateSwapCount(swapCount);
-			highlightRectangle = pIndex;
 
 			if (pIndex - 1 > startIndex)
 			{

@@ -1,33 +1,28 @@
 #include "SortAlgorithm.h"
 
-void SortAlgorithm::setArray(SDL_Rect* rectangleArray)
-{
-	this->rectangleArray = rectangleArray;
-}
-
 const bool SortAlgorithm::isSorted() const
 {
 	return sortStatus;
 }
 
-const bool SortAlgorithm::swapOccurred() const
-{
-	return swapStatus;
-}
-
-const int SortAlgorithm::getCurrentRectangle() const
-{
-	return currentRectangle;
-}
-
-const int SortAlgorithm::getHighlightRectangle() const
-{
-	return highlightRectangle;
-}
-
 const std::string& SortAlgorithm::getSortName() const
 {
 	return sortName;
+}
+
+const std::vector<std::pair<int, SDL_Color>>& SortAlgorithm::getRectanglesToHighlight() const
+{
+	return rectanglesToHighlight;
+}
+
+void SortAlgorithm::clearRectanglesToHighlight()
+{
+	rectanglesToHighlight.clear();
+}
+
+void SortAlgorithm::setArray(SDL_Rect* rectangleArray)
+{
+	this->rectangleArray = rectangleArray;
 }
 
 void SortAlgorithm::swapRectangles(const int rectOne, const int rectTwo)
@@ -38,4 +33,9 @@ void SortAlgorithm::swapRectangles(const int rectOne, const int rectTwo)
 	rectangleArray[rectTwo].y = tempY;
 	rectangleArray[rectTwo].h = tempH;
 	++swapCount;
+}
+
+void SortAlgorithm::setRectanglesToHighlight(const int indexOfRectangle, const SDL_Color& highlightColor)
+{
+	rectanglesToHighlight.push_back(std::make_pair(indexOfRectangle, highlightColor));
 }

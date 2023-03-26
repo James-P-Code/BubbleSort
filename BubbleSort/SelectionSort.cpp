@@ -2,7 +2,7 @@
 
 SelectionSort::SelectionSort()
 {
-	this->sortName = "Selection Sort";
+	sortName = "Selection Sort";
 }
 
 void SelectionSort::sort(BarChart& barChart)
@@ -26,7 +26,7 @@ void SelectionSort::sort(BarChart& barChart)
 			{
 				indexOfMinimum = currentRectangle;
 			}
-			highlightRectangle = currentRectangle;
+			setRectanglesToHighlight(currentRectangle, greenHighlightColor);
 			++currentRectangle;
 		}
 		else
@@ -38,7 +38,7 @@ void SelectionSort::sort(BarChart& barChart)
 			}
 			currentRectangle = 0;
 			++sortIterator;
-			highlightRectangle = currentRectangle;
+			setRectanglesToHighlight(currentRectangle, greenHighlightColor);
 		}
 	}
 

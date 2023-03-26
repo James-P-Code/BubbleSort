@@ -4,7 +4,7 @@
 
 MergeSort::MergeSort()
 {
-	this->sortName = "Merge Sort";
+	sortName = "Merge Sort";
 }
 
 void MergeSort::sort(BarChart& barChart)
@@ -92,9 +92,11 @@ void MergeSort::merge(int from, int mid, int to, BarChart& barChart)
 			mergeIteratorsSet = true;
 		}
 
-		if (mergeIterator <= to)
+		setRectanglesToHighlight(from, redHighlightColor);
+		setRectanglesToHighlight(to, redHighlightColor);
+		if (mergeIterator <= to && mergeIterator < numberOfRectangles)
 		{
-			highlightRectangle = mergeIterator;
+			setRectanglesToHighlight(mergeIterator, greenHighlightColor);
 			rectangleArray[mergeIterator].y = tempArr[mergeIterator].y;
 			rectangleArray[mergeIterator].h = tempArr[mergeIterator].h;
 			mergeIterator++;

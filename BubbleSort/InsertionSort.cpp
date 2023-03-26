@@ -2,7 +2,7 @@
 
 InsertionSort::InsertionSort()
 {
-	this->sortName = "Insertion Sort";
+	sortName = "Insertion Sort";
 }
 
 void InsertionSort::sort(BarChart& barChart)
@@ -24,13 +24,13 @@ void InsertionSort::sort(BarChart& barChart)
 			keyRect = rectangleArray[sortIterator];
 			currentRectangle = sortIterator - 1;
 			newIteration = false;
-			highlightRectangle = currentRectangle;
+			setRectanglesToHighlight(currentRectangle, greenHighlightColor);
 		}
 
 		if (currentRectangle >= 0 && rectangleArray[currentRectangle].y < keyRect.y)
 		{
 			swapRectangles(currentRectangle + 1, currentRectangle);
-			highlightRectangle = currentRectangle;
+			setRectanglesToHighlight(currentRectangle, greenHighlightColor);
 			currentRectangle--;
 			barChart.updateSwapCount(swapCount);
 		}
