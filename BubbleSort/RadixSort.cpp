@@ -23,62 +23,70 @@ void RadixSort::sort(BarChart& barChart)
 	if (maxValue / digitPosition > 0)
 	{
 		// Count number of times each digit occurred at digitPosition in every array element
-		if (countDigitsAtDigitPosition && countIterator < numberOfRectangles)
+		if (countDigitsAtDigitPosition && sortIterator < numberOfRectangles)
 		{
-			digitCountArray[rectangleArray[countIterator].y / digitPosition % base]++;
-			setRectanglesToHighlight(rectangleArray[countIterator].y % numberOfRectangles, redHighlightColor);
-			++countIterator;
+			digitCountArray[rectangleArray[sortIterator].y / digitPosition % base]++;
+			setRectanglesToHighlight(rectangleArray[sortIterator].y % numberOfRectangles, redHighlightColor);
+			++sortIterator;
 		}
 
-		if (countDigitsAtDigitPosition && countIterator == numberOfRectangles)
+		if (countDigitsAtDigitPosition && sortIterator == numberOfRectangles)
 		{
 			countDigitsAtDigitPosition = false;
 			countNumberOfDigits = true;
-			countIterator = 1;
+			sortIterator = 1;
 		}
 
 		// Find cumulative count, so it stores the actual position of the digit in the bucket
-		if (countNumberOfDigits && countIterator < base)
+		if (countNumberOfDigits && sortIterator < base)
 		{
-			digitCountArray[countIterator] += digitCountArray[countIterator - 1];
-			++countIterator;
+			digitCountArray[sortIterator] += digitCountArray[sortIterator - 1];
+			++sortIterator;
 		}
 
-		if (countNumberOfDigits && countIterator == base)
+		if (countNumberOfDigits && sortIterator == base)
 		{
 			countNumberOfDigits = false;
-			keepOrder = true;
-			countIterator = numberOfRectangles - 1;
+			placeBucketInOrder = true;
+			sortIterator = numberOfRectangles - 1;
 		}
 
-		if (keepOrder && countIterator >= 0)
+		if (placeBucketInOrder && sortIterator >= 0)
 		{
-			bucket[--digitCountArray[rectangleArray[countIterator].y / digitPosition % base]] = rectangleArray[countIterator];		
-			--countIterator;
+			bucket[--digitCountArray[rectangleArray[sortIterator].y / digitPosition % base]] = rectangleArray[sortIterator];
+			setRectanglesToHighlight(rectangleArray[sortIterator].y % numberOfRectangles, redHighlightColor);
+			--sortIterator;
 		}
 
-		if (keepOrder && countIterator < 0)
+		if (placeBucketInOrder && sortIterator < 0)
 		{
-			keepOrder = false;
+			placeBucketInOrder = false;
 			updateMainArray = true;
-			countIterator = 0;
+			sortIterator = 0;
 		}
 
 		// Order the main array by using the bucket
-		if (updateMainArray && countIterator < numberOfRectangles)
+		if (updateMainArray && sortIterator < numberOfRectangles && maxValue / (digitPosition * base) > 0)
 		{
-			rectangleArray[countIterator].y = bucket[countIterator].y;
-			rectangleArray[countIterator].h = bucket[countIterator].h;
-			setRectanglesToHighlight(countIterator, greenHighlightColor);
-			++countIterator;
+			rectangleArray[sortIterator].y = bucket[sortIterator].y;
+			rectangleArray[sortIterator].h = bucket[sortIterator].h;
+			setRectanglesToHighlight(sortIterator, greenHighlightColor);
+			++sortIterator;
+		}
+		else if (updateMainArray && sortIterator < numberOfRectangles && maxValue / (digitPosition * base) == 0)  // on the final iteration reverse the order to display in ascending order
+		{
+			rectangleArray[sortIterator].y = bucket[(numberOfRectangles - 1) - sortIterator].y;
+			rectangleArray[sortIterator].h = bucket[(numberOfRectangles - 1) - sortIterator].h;
+			setRectanglesToHighlight(sortIterator, greenHighlightColor);
+			++sortIterator;
 		}
 
-		if (updateMainArray && countIterator == numberOfRectangles)
+		if (updateMainArray && sortIterator == numberOfRectangles)
 		{
 			digitPosition *= base;
 			updateMainArray = false;
 			countDigitsAtDigitPosition = true;
-			countIterator = 0;
+			sortIterator = 0;
 
 			for (int i = 0; i < base; ++i)
 			{
