@@ -1,5 +1,5 @@
 #include "MenuState.h"
-#include "SortManager.h"
+#include "ProgramManager.h"
 
 void MenuState::update(BarChart& barChart) {}
 
@@ -20,4 +20,4 @@ void MenuState::render(RenderWindow& renderWindow, BarChart& barChart, Text& tex
 
 void MenuState::handleEvent(SDL_Event& event) {}
 
-void MenuState::changeState(SortManager& sortManager) {}
+void MenuState::changeState(ProgramManager& programManager) {}

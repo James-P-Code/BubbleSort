@@ -5,11 +5,11 @@
 
 #include "SDL.h"
 #include "Constants.h"
-#include "SortManager.h"
+#include "ProgramManager.h"
 
 int main(int argc, char* argv[])
 {
-	SortManager sm;
+	ProgramManager programManager;
 	SDL_Event event;
 	uint32_t frameStart, frameEnd;
 	bool quit = false;
@@ -25,11 +25,11 @@ int main(int argc, char* argv[])
 				quit = true;
 			}
 
-			sm.handleEvent(event);			
+			programManager.handleEvent(event);			
 		}
-		sm.update();
-		sm.render();
-		sm.changeState();
+		programManager.update();
+		programManager.render();
+		programManager.changeState();
 
 		frameEnd = SDL_GetTicks() - frameStart;
 		

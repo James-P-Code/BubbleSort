@@ -10,6 +10,11 @@ const std::string& SortAlgorithm::getSortName() const
 	return sortName;
 }
 
+const int SortAlgorithm::getSwapCount() const
+{
+	return swapCount;
+}
+
 const std::vector<std::pair<int, SDL_Color>>& SortAlgorithm::getRectanglesToHighlight() const
 {
 	return rectanglesToHighlight;

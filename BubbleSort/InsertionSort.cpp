@@ -3,6 +3,7 @@
 InsertionSort::InsertionSort()
 {
 	sortName = "Insertion Sort";
+	sortIterator = 1;
 }
 
 void InsertionSort::sort(BarChart& barChart)
@@ -10,11 +11,6 @@ void InsertionSort::sort(BarChart& barChart)
 	if (!rectangleArray)
 	{
 		setArray(barChart.getChart().data());
-	}
-
-	if (sortIterator == 0)
-	{
-		sortIterator = 1;
 	}
 
 	if (sortIterator < numberOfRectangles)
@@ -32,7 +28,6 @@ void InsertionSort::sort(BarChart& barChart)
 			swapRectangles(currentRectangle + 1, currentRectangle);
 			setRectanglesToHighlight(currentRectangle, greenHighlightColor);
 			currentRectangle--;
-			barChart.updateSwapCount(swapCount);
 		}
 
 		if (currentRectangle < 0 || rectangleArray[currentRectangle].y > keyRect.y)

@@ -22,7 +22,6 @@ void BubbleSort::sort(BarChart& barChart)
 			{
 				swapRectangles(currentRectangle, currentRectangle + 1);
 				swapStatus = true;
-				barChart.updateSwapCount(swapCount);
 			}
 
 			++currentRectangle;

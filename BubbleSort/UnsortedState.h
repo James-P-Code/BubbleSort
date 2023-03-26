@@ -13,7 +13,7 @@ private:
 	void update(BarChart& barChart) override;
 	void render(RenderWindow& renderWindow, BarChart& barChart, Text& text) override;
 	void handleEvent(SDL_Event& event) override;
-	void changeState(SortManager& sortManager) override;
+	void changeState(ProgramManager& programManager) override;
 
 	bool renderComplete = false, resetBarChart = false;
 };

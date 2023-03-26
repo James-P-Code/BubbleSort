@@ -99,8 +99,8 @@ void MergeSort::merge(int from, int mid, int to, BarChart& barChart)
 			setRectanglesToHighlight(mergeIterator, greenHighlightColor);
 			rectangleArray[mergeIterator].y = tempArr[mergeIterator].y;
 			rectangleArray[mergeIterator].h = tempArr[mergeIterator].h;
-			mergeIterator++;
-			barChart.updateSwapCount(++swapCount);
+			++mergeIterator;
+			++swapCount;
 		}
 		else
 		{

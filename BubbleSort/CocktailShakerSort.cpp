@@ -24,7 +24,6 @@ void CocktailShakerSort::sort(BarChart& barChart)
 		{
 			swapRectangles(sortIterator, sortIterator - 1);
 			swapStatus = true;
-			barChart.updateSwapCount(swapCount);
 		}
 		setRectanglesToHighlight(sortIterator, greenHighlightColor);
 		++sortIterator;
@@ -48,7 +47,6 @@ void CocktailShakerSort::sort(BarChart& barChart)
 		{
 			swapRectangles(sortIterator, sortIterator - 1);
 			swapStatus = true;
-			barChart.updateSwapCount(swapCount);
 		}
 		--sortIterator;
 		setRectanglesToHighlight(sortIterator, greenHighlightColor);

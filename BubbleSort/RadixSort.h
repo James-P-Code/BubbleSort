@@ -1,7 +1,6 @@
 #pragma once
 
 #include "SortAlgorithm.h"
-#include <iostream>
 
 class RadixSort : public SortAlgorithm
 {
@@ -16,5 +15,4 @@ private:
 	bool countDigitsAtDigitPosition = true, countNumberOfDigits = false, placeBucketInOrder = false, updateMainArray = false;
 
 	void sort(BarChart& barChart) override;
-	
 };

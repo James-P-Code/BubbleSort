@@ -18,19 +18,20 @@ class SortAlgorithm
 public:
 	enum class SortType
 	{
-		None = 0,
-		BubbleSort = 1,
-		SelectionSort = 2,
-		InsertionSort = 3,
-		QuickSort = 4,
-		MergeSort = 5,
-		CocktailShakerSort = 6,
-		RadixSort = 7
+		None,
+		BubbleSort,
+		SelectionSort,
+		InsertionSort,
+		QuickSort,
+		MergeSort,
+		CocktailShakerSort,
+		RadixSort
 	};
 
 	virtual void sort(BarChart& barChart) = 0;
 	const bool isSorted() const;
 	const std::string& getSortName() const;
+	const int getSwapCount() const;
 	const std::vector<std::pair<int, SDL_Color>>& getRectanglesToHighlight() const;
 	void clearRectanglesToHighlight();
 

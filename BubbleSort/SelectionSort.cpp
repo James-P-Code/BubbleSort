@@ -34,7 +34,6 @@ void SelectionSort::sort(BarChart& barChart)
 			if (indexOfMinimum != 1)
 			{
 				swapRectangles(indexOfMinimum, sortIterator);
-				barChart.updateSwapCount(swapCount);
 			}
 			currentRectangle = 0;
 			++sortIterator;

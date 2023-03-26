@@ -9,10 +9,10 @@ class UnsortedState;
 class SortingState;
 class SortedState;
 
-class SortManager final
+class ProgramManager final
 {
 public:
-	SortManager();
+	ProgramManager();
 	void update();
 	void render();
 	void handleEvent(SDL_Event& event);

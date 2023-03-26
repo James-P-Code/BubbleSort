@@ -156,7 +156,7 @@
     <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="SortedState.cpp" />
     <ClCompile Include="SortingState.cpp" />
-    <ClCompile Include="SortManager.cpp" />
+    <ClCompile Include="ProgramManager.cpp" />
     <ClCompile Include="SortAlgorithm.cpp" />
     <ClCompile Include="Text.cpp" />
     <ClCompile Include="TTFSubSystem.cpp" />
@@ -178,7 +178,7 @@
     <ClInclude Include="SelectionSort.h" />
     <ClInclude Include="SortedState.h" />
     <ClInclude Include="SortingState.h" />
-    <ClInclude Include="SortManager.h" />
+    <ClInclude Include="ProgramManager.h" />
     <ClInclude Include="SortAlgorithm.h" />
     <ClInclude Include="Text.h" />
     <ClInclude Include="TTFSubSystem.h" />

@@ -33,7 +33,7 @@
     <ClCompile Include="SDLSubSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SortManager.cpp">
+    <ClCompile Include="ProgramManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UnsortedState.cpp">
@@ -92,7 +92,7 @@
     <ClInclude Include="SDLSubSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SortManager.h">
+    <ClInclude Include="ProgramManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BarChartState.h">

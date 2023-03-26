@@ -1,6 +1,6 @@
 #include "BarChart.h"
 
-BarChart::BarChart() : swapCount(0)
+BarChart::BarChart()
 {
     int xPosition = 0;
     std::array<int, numberOfRectangles> rectangleHeights;
@@ -34,29 +34,9 @@ BarChart::BarChart() : swapCount(0)
     }
 }
 
-const int BarChart::getSwapCount() const
-{
-    return swapCount;
-}
-
-void BarChart::updateSwapCount(int swapCount)
-{
-    this->swapCount = swapCount;
-}
-
 std::array<SDL_Rect, numberOfRectangles>& BarChart::getChart()
 {
     return rectangleArray;
-}
-
-const int BarChart::normalizeHeight(const int numberToNormalize) const
-{
-    constexpr float minRange = 0.0f;
-    constexpr float maxRange = numberOfRectangles;
-    constexpr float minBarHeight = 10.0f;
-    constexpr float maxBarHeight = windowHeight;
-
-    return static_cast<int>((numberToNormalize - minRange) / (maxRange - minRange) * (maxBarHeight - minBarHeight) + minBarHeight);
 }
 
 void BarChart::resetChart()
@@ -76,4 +56,14 @@ void BarChart::resetChart()
         rectangleArray[i].y = rectangleHeights[i];
         rectangleArray[i].h = windowHeight - rectangleHeights[i];
     }
+}
+
+const int BarChart::normalizeHeight(const int numberToNormalize) const
+{
+    constexpr float minRange = 0.0f;
+    constexpr float maxRange = numberOfRectangles;
+    constexpr float minBarHeight = 10.0f;
+    constexpr float maxBarHeight = windowHeight;
+
+    return static_cast<int>((numberToNormalize - minRange) / (maxRange - minRange) * (maxBarHeight - minBarHeight) + minBarHeight);
 }

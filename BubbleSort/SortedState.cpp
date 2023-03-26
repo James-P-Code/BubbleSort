@@ -1,5 +1,5 @@
 #include "SortedState.h"
-#include "SortManager.h"
+#include "ProgramManager.h"
 
 void SortedState::update(BarChart& barChart) {}
 
@@ -10,7 +10,6 @@ void SortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& t
 		SDL_Rect textDisplayRect = { 10, 10, 0, 0 };
 		SDL_Color textColor = { 111, 245, 66, 255 };
 		renderWindow.renderArray(barChart.getChart().data());
-		text.render(renderWindow.getRenderer(), "Swap Count: " + std::to_string(barChart.getSwapCount()), textColor, textDisplayRect);
 	}
 
 	if (currentRectangle < numberOfRectangles) // gradient fill flourish effect
@@ -35,10 +34,10 @@ void SortedState::handleEvent(SDL_Event& event)
 	}
 }
 
-void SortedState::changeState(SortManager& sortManager) 
+void SortedState::changeState(ProgramManager& programManager) 
 {
 	if (changeStateStatus)
 	{
-		sortManager.setState(std::make_unique<UnsortedState>(true));
+		programManager.setState(std::make_unique<UnsortedState>(true));
 	}
 }

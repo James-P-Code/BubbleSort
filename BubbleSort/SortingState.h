@@ -19,11 +19,10 @@ public:
 private:
 	SDL_Rect textDisplayRect = { 10, 10, 0, 0 };
 	SDL_Color textColor = { 111, 245, 66, 255 };
-	int rectangleToHighlight = 0;
 	std::unique_ptr<SortAlgorithm> sortAlgorithm;
 
 	void update(BarChart& barChart) override;
 	void render(RenderWindow& renderWindow, BarChart& barChart, Text& text) override;
 	void handleEvent(SDL_Event& event) override;
-	void changeState(SortManager& sortManager) override;
+	void changeState(ProgramManager& programManager) override;
 };

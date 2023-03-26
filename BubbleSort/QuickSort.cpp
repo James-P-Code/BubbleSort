@@ -35,7 +35,6 @@ void QuickSort::sort(BarChart& barChart)
 			if (rectangleArray[sortIterator].y >= pivotRectY)
 			{
 				swapRectangles(sortIterator, pivotIndex);
-				barChart.updateSwapCount(swapCount);
 				++pivotIndex;
 				setRectanglesToHighlight(sortIterator, greenHighlightColor);
 			}
@@ -44,7 +43,6 @@ void QuickSort::sort(BarChart& barChart)
 		else
 		{
 			swapRectangles(pivotIndex, endIndex);
-			barChart.updateSwapCount(swapCount);
 
 			if (pivotIndex - 1 > startIndex)
 			{
