@@ -1,8 +1,8 @@
 #pragma once
 
-#include "UnsortedState.h"
-#include "SortingState.h"
-#include "SortedState.h"
+#include "../BarChartState/UnsortedState.h"
+#include "../BarChartState/SortingState.h"
+#include "../BarChartState/SortedState.h"
 #include <memory>
 
 class ProgramManager final

@@ -7,73 +7,76 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BubbleSort", "BubbleSort\Bu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RenderWindow", "RenderWindow", "{C762710B-01E1-4C2D-BF92-26E86ED6DC32}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\RenderWindow.cpp = BubbleSort\RenderWindow.cpp
-		BubbleSort\RenderWindow.h = BubbleSort\RenderWindow.h
+		BubbleSort\RenderWindow\RenderWindow.cpp = BubbleSort\RenderWindow\RenderWindow.cpp
+		BubbleSort\RenderWindow\RenderWindow.h = BubbleSort\RenderWindow\RenderWindow.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProgramManager", "ProgramManager", "{7C804530-628C-4466-AF28-DB2240D24565}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\ProgramManager.cpp = BubbleSort\ProgramManager.cpp
-		BubbleSort\ProgramManager.h = BubbleSort\ProgramManager.h
+		BubbleSort\ProgramManager\ProgramManager.cpp = BubbleSort\ProgramManager\ProgramManager.cpp
+		BubbleSort\ProgramManager\ProgramManager.h = BubbleSort\ProgramManager\ProgramManager.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BarChart", "BarChart", "{C0DD2007-1B9A-42A2-AE2B-81A1F4423CAC}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\BarChart.cpp = BubbleSort\BarChart.cpp
-		BubbleSort\BarChart.h = BubbleSort\BarChart.h
+		BubbleSort\BarChart\BarChart.cpp = BubbleSort\BarChart\BarChart.cpp
+		BubbleSort\BarChart\BarChart.h = BubbleSort\BarChart\BarChart.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BarChartState", "BarChartState", "{8FBFF9C7-E02D-4D3E-B1B4-5BEC0AA3D30E}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\BarChartState.h = BubbleSort\BarChartState.h
-		BubbleSort\SortedState.cpp = BubbleSort\SortedState.cpp
-		BubbleSort\SortedState.h = BubbleSort\SortedState.h
-		BubbleSort\SortingState.cpp = BubbleSort\SortingState.cpp
-		BubbleSort\SortingState.h = BubbleSort\SortingState.h
-		BubbleSort\UnsortedState.cpp = BubbleSort\UnsortedState.cpp
-		BubbleSort\UnsortedState.h = BubbleSort\UnsortedState.h
+		BubbleSort\BarChartState\BarChartState.h = BubbleSort\BarChartState\BarChartState.h
+		BubbleSort\BarChartState\MenuState.cpp = BubbleSort\BarChartState\MenuState.cpp
+		BubbleSort\BarChartState\MenuState.h = BubbleSort\BarChartState\MenuState.h
+		BubbleSort\BarChartState\SortedState.cpp = BubbleSort\BarChartState\SortedState.cpp
+		BubbleSort\BarChartState\SortedState.h = BubbleSort\BarChartState\SortedState.h
+		BubbleSort\BarChartState\SortingState.cpp = BubbleSort\BarChartState\SortingState.cpp
+		BubbleSort\BarChartState\SortingState.h = BubbleSort\BarChartState\SortingState.h
+		BubbleSort\BarChartState\UnsortedState.cpp = BubbleSort\BarChartState\UnsortedState.cpp
+		BubbleSort\BarChartState\UnsortedState.h = BubbleSort\BarChartState\UnsortedState.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Text", "Text", "{FFFBD7CC-F829-4544-9115-26872813928C}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\Text.cpp = BubbleSort\Text.cpp
-		BubbleSort\Text.h = BubbleSort\Text.h
+		BubbleSort\Text\Text.cpp = BubbleSort\Text\Text.cpp
+		BubbleSort\Text\Text.h = BubbleSort\Text\Text.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDLSubSystem", "SDLSubSystem", "{F30F873E-3E27-4A4D-A7DA-026D86730F92}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\SDLSubSystem.cpp = BubbleSort\SDLSubSystem.cpp
-		BubbleSort\SDLSubSystem.h = BubbleSort\SDLSubSystem.h
+		BubbleSort\SDLSubSystem\SDLSubSystem.cpp = BubbleSort\SDLSubSystem\SDLSubSystem.cpp
+		BubbleSort\SDLSubSystem\SDLSubSystem.h = BubbleSort\SDLSubSystem\SDLSubSystem.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TTFSubSystem", "TTFSubSystem", "{60DF3937-69E3-485E-B99A-36B5AF715173}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\TTFSubSystem.cpp = BubbleSort\TTFSubSystem.cpp
-		BubbleSort\TTFSubSystem.h = BubbleSort\TTFSubSystem.h
+		BubbleSort\TTFSubSystem\TTFSubSystem.cpp = BubbleSort\TTFSubSystem\TTFSubSystem.cpp
+		BubbleSort\TTFSubSystem\TTFSubSystem.h = BubbleSort\TTFSubSystem\TTFSubSystem.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SortAlgorithm", "SortAlgorithm", "{CEDDE8E7-E3FF-48FB-A7B7-E3895752777D}"
 	ProjectSection(SolutionItems) = preProject
-		BubbleSort\BubbleSort.cpp = BubbleSort\BubbleSort.cpp
-		BubbleSort\BubbleSort.h = BubbleSort\BubbleSort.h
-		BubbleSort\CocktailShakerSort.cpp = BubbleSort\CocktailShakerSort.cpp
-		BubbleSort\CocktailShakerSort.h = BubbleSort\CocktailShakerSort.h
-		BubbleSort\InsertionSort.cpp = BubbleSort\InsertionSort.cpp
-		BubbleSort\InsertionSort.h = BubbleSort\InsertionSort.h
-		BubbleSort\MergeSort.cpp = BubbleSort\MergeSort.cpp
-		BubbleSort\MergeSort.h = BubbleSort\MergeSort.h
-		BubbleSort\QuickSort.cpp = BubbleSort\QuickSort.cpp
-		BubbleSort\QuickSort.h = BubbleSort\QuickSort.h
-		BubbleSort\RadixSort.cpp = BubbleSort\RadixSort.cpp
-		BubbleSort\RadixSort.h = BubbleSort\RadixSort.h
-		BubbleSort\SelectionSort.cpp = BubbleSort\SelectionSort.cpp
-		BubbleSort\SelectionSort.h = BubbleSort\SelectionSort.h
-		BubbleSort\SortAlgorithm.cpp = BubbleSort\SortAlgorithm.cpp
-		BubbleSort\SortAlgorithm.h = BubbleSort\SortAlgorithm.h
+		BubbleSort\SortAlgorithm\BubbleSort.cpp = BubbleSort\SortAlgorithm\BubbleSort.cpp
+		BubbleSort\SortAlgorithm\BubbleSort.h = BubbleSort\SortAlgorithm\BubbleSort.h
+		BubbleSort\SortAlgorithm\CocktailShakerSort.cpp = BubbleSort\SortAlgorithm\CocktailShakerSort.cpp
+		BubbleSort\SortAlgorithm\CocktailShakerSort.h = BubbleSort\SortAlgorithm\CocktailShakerSort.h
+		BubbleSort\SortAlgorithm\InsertionSort.cpp = BubbleSort\SortAlgorithm\InsertionSort.cpp
+		BubbleSort\SortAlgorithm\InsertionSort.h = BubbleSort\SortAlgorithm\InsertionSort.h
+		BubbleSort\SortAlgorithm\MergeSort.cpp = BubbleSort\SortAlgorithm\MergeSort.cpp
+		BubbleSort\SortAlgorithm\MergeSort.h = BubbleSort\SortAlgorithm\MergeSort.h
+		BubbleSort\SortAlgorithm\QuickSort.cpp = BubbleSort\SortAlgorithm\QuickSort.cpp
+		BubbleSort\SortAlgorithm\QuickSort.h = BubbleSort\SortAlgorithm\QuickSort.h
+		BubbleSort\SortAlgorithm\RadixSort.cpp = BubbleSort\SortAlgorithm\RadixSort.cpp
+		BubbleSort\SortAlgorithm\RadixSort.h = BubbleSort\SortAlgorithm\RadixSort.h
+		BubbleSort\SortAlgorithm\SelectionSort.cpp = BubbleSort\SortAlgorithm\SelectionSort.cpp
+		BubbleSort\SortAlgorithm\SelectionSort.h = BubbleSort\SortAlgorithm\SelectionSort.h
+		BubbleSort\SortAlgorithm\SortAlgorithm.cpp = BubbleSort\SortAlgorithm\SortAlgorithm.cpp
+		BubbleSort\SortAlgorithm\SortAlgorithm.h = BubbleSort\SortAlgorithm\SortAlgorithm.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main", "Main", "{98AB6EA6-CE61-4566-94DA-301037A27444}"
 	ProjectSection(SolutionItems) = preProject
+		BubbleSort\Constants.h = BubbleSort\Constants.h
 		BubbleSort\main.cpp = BubbleSort\main.cpp
 	EndProjectSection
 EndProject

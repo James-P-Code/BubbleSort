@@ -1,11 +1,10 @@
 #pragma once
 
 #include "SDL.h"
-#include "Constants.h"
-#include "BarChart.h"
+#include "../Constants.h"
+#include "../BarChart/BarChart.h"
 #include <string>
 #include <vector>
-#include <iostream>
 
 /* All of the sorts are done in what I would call an iterative manner.  Because the overall program is driven by a loop
 *  in main() the sorts need to be done 1 step at a time.  This is because the window needs to be updated after every step

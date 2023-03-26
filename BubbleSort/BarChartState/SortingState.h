@@ -1,13 +1,13 @@
 #pragma once
 
 #include "BarChartState.h"
-#include "BubbleSort.h"
-#include "SelectionSort.h"
-#include "InsertionSort.h"
-#include "QuickSort.h"
-#include "MergeSort.h"
-#include "CocktailShakerSort.h"
-#include "RadixSort.h"
+#include "../SortAlgorithm/BubbleSort.h"
+#include "../SortAlgorithm/SelectionSort.h"
+#include "../SortAlgorithm/InsertionSort.h"
+#include "../SortAlgorithm/QuickSort.h"
+#include "../SortAlgorithm/MergeSort.h"
+#include "../SortAlgorithm/CocktailShakerSort.h"
+#include "../SortAlgorithm/RadixSort.h"
 #include <memory>
 
 class SortingState final : public BarChartState

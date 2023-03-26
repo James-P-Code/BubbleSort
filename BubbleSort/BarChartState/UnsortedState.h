@@ -16,5 +16,6 @@ private:
 	void handleEvent(SDL_Event& event) override;
 	void changeState(ProgramManager& programManager) override;
 
+	SortAlgorithm::SortType sortType = SortAlgorithm::SortType::None;
 	bool renderComplete = false, resetBarChart = false;
 };

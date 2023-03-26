@@ -5,7 +5,7 @@
 
 #include "SDL.h"
 #include "Constants.h"
-#include "ProgramManager.h"
+#include "ProgramManager/ProgramManager.h"
 
 int main(int argc, char* argv[])
 {

@@ -2,8 +2,8 @@
 
 #include "SDL.h"
 #include <memory>
-#include "Constants.h"
-#include "SDLSubSystem.h"
+#include "../Constants.h"
+#include "../SDLSubSystem/SDLSubSystem.h"
 
 class RenderWindow final : public SDLSubSystem
 {

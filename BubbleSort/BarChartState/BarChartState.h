@@ -1,11 +1,11 @@
 #pragma once
 
 #include "SDL.h"
-#include "Constants.h"
-#include "BarChart.h"
-#include "Text.h"
-#include "RenderWindow.h"
-#include "SortAlgorithm.h"
+#include "../Constants.h"
+#include "../BarChart/BarChart.h"
+#include "../Text/Text.h"
+#include "../RenderWindow/RenderWindow.h"
+#include "../SortAlgorithm/SortAlgorithm.h"
 #include <string>
 
 class ProgramManager;
@@ -21,5 +21,4 @@ public:
 
 protected:
 	bool changeStateStatus = false;  // no need to set this to false in the indivdual states, it will reset on any state change
-	SortAlgorithm::SortType sortType = SortAlgorithm::SortType::None;
 };

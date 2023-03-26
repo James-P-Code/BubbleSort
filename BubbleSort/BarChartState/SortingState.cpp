@@ -1,5 +1,5 @@
 #include "SortingState.h"
-#include "ProgramManager.h"
+#include "../ProgramManager/ProgramManager.h"
 
 SortingState::SortingState(const SortAlgorithm::SortType& sortType)
 {
@@ -27,7 +27,7 @@ void SortingState::update(BarChart& barChart)
 
 void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& text) 
 {
-	SDL_Rect sortNameRect = { 10, 30, 0, 0 };
+	SDL_Rect sortNameDisplayPosition = { 10, 30, 0, 0 };
 
 	renderWindow.clearRenderer();
 	renderWindow.renderArray(barChart.getChart().data());
@@ -37,7 +37,7 @@ void SortingState::render(RenderWindow& renderWindow, BarChart& barChart, Text& 
 	}
 	sortAlgorithm->clearRectanglesToHighlight();
 	text.render(renderWindow.getRenderer(), "Swap Count: " + std::to_string(sortAlgorithm->getSwapCount()), textColor, textDisplayRect);
-	text.render(renderWindow.getRenderer(), sortAlgorithm->getSortName(), textColor, sortNameRect);
+	text.render(renderWindow.getRenderer(), sortAlgorithm->getSortName(), textColor, sortNameDisplayPosition);
 	renderWindow.updateWindow();
 }
 

@@ -1,5 +1,5 @@
 #include "UnsortedState.h"
-#include "ProgramManager.h"
+#include "../ProgramManager/ProgramManager.h"
 
 // Use this constructor to reset the bar chart
 UnsortedState::UnsortedState(const bool resetBarChart) : resetBarChart(resetBarChart) {}

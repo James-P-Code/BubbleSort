@@ -5,8 +5,7 @@
 #include <memory>
 #include <string>
 #include <unordered_map>
-#include "TTFSubSystem.h"
-#include <iostream>
+#include "../TTFSubSystem/TTFSubSystem.h"
 
 class Text final : public TTFSubSystem
 {

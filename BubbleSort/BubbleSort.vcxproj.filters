@@ -18,120 +18,120 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BarChart.cpp">
+    <ClCompile Include="BarChart\BarChart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RenderWindow.cpp">
+    <ClCompile Include="RenderWindow\RenderWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Text.cpp">
+    <ClCompile Include="Text\Text.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TTFSubSystem.cpp">
+    <ClCompile Include="TTFSubSystem\TTFSubSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SDLSubSystem.cpp">
+    <ClCompile Include="SDLSubSystem\SDLSubSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProgramManager.cpp">
+    <ClCompile Include="ProgramManager\ProgramManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UnsortedState.cpp">
+    <ClCompile Include="BarChartState\UnsortedState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SortingState.cpp">
+    <ClCompile Include="BarChartState\SortingState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SortedState.cpp">
+    <ClCompile Include="BarChartState\SortedState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuState.cpp">
+    <ClCompile Include="BarChartState\MenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SortAlgorithm.cpp">
+    <ClCompile Include="SortAlgorithm\SortAlgorithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InsertionSort.cpp">
+    <ClCompile Include="SortAlgorithm\InsertionSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BubbleSort.cpp">
+    <ClCompile Include="SortAlgorithm\BubbleSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SelectionSort.cpp">
+    <ClCompile Include="SortAlgorithm\SelectionSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QuickSort.cpp">
+    <ClCompile Include="SortAlgorithm\QuickSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MergeSort.cpp">
+    <ClCompile Include="SortAlgorithm\MergeSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CocktailShakerSort.cpp">
+    <ClCompile Include="SortAlgorithm\CocktailShakerSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RadixSort.cpp">
+    <ClCompile Include="SortAlgorithm\RadixSort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BarChart.h">
+    <ClInclude Include="BarChart\BarChart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RenderWindow.h">
+    <ClInclude Include="RenderWindow\RenderWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Text.h">
+    <ClInclude Include="Text\Text.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TTFSubSystem.h">
+    <ClInclude Include="TTFSubSystem\TTFSubSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SDLSubSystem.h">
+    <ClInclude Include="SDLSubSystem\SDLSubSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProgramManager.h">
+    <ClInclude Include="ProgramManager\ProgramManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BarChartState.h">
+    <ClInclude Include="BarChartState\BarChartState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UnsortedState.h">
+    <ClInclude Include="BarChartState\UnsortedState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SortingState.h">
+    <ClInclude Include="BarChartState\SortingState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SortedState.h">
+    <ClInclude Include="BarChartState\SortedState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MenuState.h">
+    <ClInclude Include="BarChartState\MenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SortAlgorithm.h">
+    <ClInclude Include="SortAlgorithm\SortAlgorithm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InsertionSort.h">
+    <ClInclude Include="SortAlgorithm\InsertionSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BubbleSort.h">
+    <ClInclude Include="SortAlgorithm\BubbleSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SelectionSort.h">
+    <ClInclude Include="SortAlgorithm\SelectionSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QuickSort.h">
+    <ClInclude Include="SortAlgorithm\QuickSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MergeSort.h">
+    <ClInclude Include="SortAlgorithm\MergeSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CocktailShakerSort.h">
+    <ClInclude Include="SortAlgorithm\CocktailShakerSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RadixSort.h">
+    <ClInclude Include="SortAlgorithm\RadixSort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
