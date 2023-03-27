@@ -4,7 +4,6 @@
 #include "../Constants.h"
 #include "../BarChart/BarChart.h"
 #include <string>
-#include <array>
 #include <vector>
 
 /* All of the sorts are done in what I would call an iterative manner.  Because the overall program is driven by a loop
@@ -43,8 +42,8 @@ protected:
 	SDL_Rect* rectangleArray = nullptr;
 	std::vector<std::pair<int, SDL_Color>> rectanglesToHighlight;
 	std::string sortName;
-	bool sortedStatus = false, swapStatus = false;
-	int currentRectangle = 0, swapCount = 0, sortIterator = 0;
+	bool sortedStatus = false;
+	int  swapCount = 0, sortIterator = 0;
 
 	void setArray(SDL_Rect* rectangleArray);
 	void swapRectangles(const int rectOne, const int rectTwo);

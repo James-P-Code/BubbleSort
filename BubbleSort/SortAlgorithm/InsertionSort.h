@@ -10,6 +10,7 @@ public:
 private:
 	SDL_Rect keyRect;
 	bool newIteration = true;
+	int currentRectangle = 0;
 
 	void sort(BarChart& barChart) override;
 };

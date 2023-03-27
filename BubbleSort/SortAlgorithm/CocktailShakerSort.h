@@ -9,7 +9,8 @@ public:
 	virtual ~CocktailShakerSort() {};
 
 private:
-	void sort(BarChart& barChart) override;
-	bool ascendingSort = true;
+	bool ascendingSort = true, swapOccurred;
 	int maxIndexToSort = numberOfRectangles, minIndexToSort = 0;
+
+	void sort(BarChart& barChart) override;
 };

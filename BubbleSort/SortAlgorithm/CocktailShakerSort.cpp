@@ -15,7 +15,7 @@ void CocktailShakerSort::sort(BarChart& barChart)
 
 	if (sortIterator == minIndexToSort || sortIterator == maxIndexToSort)
 	{
-		swapStatus = false;
+		swapOccurred = false;
 	}
 
 	if (ascendingSort && sortIterator < maxIndexToSort)
@@ -23,7 +23,7 @@ void CocktailShakerSort::sort(BarChart& barChart)
 		if (rectangleArray[sortIterator].y > rectangleArray[sortIterator - 1].y)
 		{
 			swapRectangles(sortIterator, sortIterator - 1);
-			swapStatus = true;
+			swapOccurred = true;
 		}
 		setRectanglesToHighlight(sortIterator, greenHighlightColor);
 		++sortIterator;
@@ -31,7 +31,7 @@ void CocktailShakerSort::sort(BarChart& barChart)
 
 	if (sortIterator == maxIndexToSort && ascendingSort)
 	{
-		if (!swapStatus)
+		if (!swapOccurred)
 		{
 			sortedStatus = true;
 		}
@@ -46,7 +46,7 @@ void CocktailShakerSort::sort(BarChart& barChart)
 		if (rectangleArray[sortIterator].y > rectangleArray[sortIterator - 1].y)
 		{
 			swapRectangles(sortIterator, sortIterator - 1);
-			swapStatus = true;
+			swapOccurred = true;
 		}
 		--sortIterator;
 		setRectanglesToHighlight(sortIterator, greenHighlightColor);

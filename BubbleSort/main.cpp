@@ -23,7 +23,6 @@ int main(int argc, char* argv[])
 			{
 				quit = true;
 			}
-
 			programManager.handleEvent(event);			
 		}
 		programManager.update();

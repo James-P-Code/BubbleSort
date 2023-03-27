@@ -10,5 +10,5 @@ public:
 private:
 	void sort(BarChart& barChart) override;
 
-	int indexOfMinimum;
+	int indexOfMinimum, currentRectangle = 0;
 };

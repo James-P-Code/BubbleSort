@@ -12,7 +12,7 @@ void BubbleSort::sort(BarChart& barChart)
 		setArray(barChart.getChart().data());
 	}
 
-	swapStatus = false;
+	swapOccurred = false;
 
 	if (sortIterator < numberOfRectangles)
 	{
@@ -21,7 +21,7 @@ void BubbleSort::sort(BarChart& barChart)
 			if (rectangleArray[currentRectangle].y < rectangleArray[currentRectangle + 1].y)
 			{
 				swapRectangles(currentRectangle, currentRectangle + 1);
-				swapStatus = true;
+				swapOccurred = true;
 			}
 
 			++currentRectangle;
@@ -30,7 +30,7 @@ void BubbleSort::sort(BarChart& barChart)
 		{
 			currentRectangle = 0;
 			sortIterator++;
-			swapStatus = false;
+			swapOccurred = false;
 		}
 
 		setRectanglesToHighlight(currentRectangle, greenHighlightColor);

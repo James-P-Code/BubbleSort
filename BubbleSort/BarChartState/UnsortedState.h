@@ -9,14 +9,13 @@ public:
 	virtual ~UnsortedState() {};
 
 private:
-
 	void update(BarChart& barChart) override;
 	void render(RenderWindow& renderWindow, BarChart& barChart, Text& text) override;
 	void handleEvent(SDL_Event& event) override;
 	void changeState(ProgramManager& programManager) override;
 
 	SortAlgorithm::SortType sortType = SortAlgorithm::SortType::None;
-	bool renderComplete = false, resetBarChart = false;
+	bool renderComplete = false;
 	const std::array <std::string, 7> sortDisplayNames // REALLY NOT A FAN OF DOING IT THIS WAY
 	{
 		"Bubble Sort",

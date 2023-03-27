@@ -3,7 +3,6 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 #include <memory>
-#include <string>
 #include <unordered_map>
 #include "../TTFSubSystem/TTFSubSystem.h"
 

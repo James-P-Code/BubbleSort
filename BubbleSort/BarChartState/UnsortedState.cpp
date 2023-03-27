@@ -1,14 +1,7 @@
 #include "UnsortedState.h"
 #include "../ProgramManager/ProgramManager.h"
 
-void UnsortedState::update(BarChart& barChart) 
-{
-	if (resetBarChart)
-	{
-		barChart.resetChart();
-		resetBarChart = false;
-	}
-}
+void UnsortedState::update(BarChart& barChart) {}
 
 void UnsortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& text)
 {
@@ -18,15 +11,14 @@ void UnsortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text&
 		SDL_Rect translucentBackground = { 0, 0, windowWidth, windowHeight };
 		SDL_Color translucentColor = { 0, 0, 0, 220 };
 		SDL_Rect sortDisplayNameLocation = { 275, 200, 0, 0 };
-		SDL_Rect textDisplayRect = { 10, 10, 0, 0 };  // where the text will be displayed on the screen
-		SDL_Color textColor = { 111, 245, 66, 255 };
+
 		renderWindow.clearRenderer();
 		renderWindow.renderArray(barChart.getChart().data());
 		renderWindow.renderTranslucentRect(translucentBackground, translucentColor);
 
 		for (const std::string& displayName : sortDisplayNames)
 		{
-			text.render(renderWindow.getRenderer(), std::to_string(menuOptionNumber) + " " + displayName, textColor, sortDisplayNameLocation);
+			text.render(renderWindow.getRenderer(), std::to_string(menuOptionNumber) + " " + displayName, highlightColor, sortDisplayNameLocation);
 			++menuOptionNumber;
 			sortDisplayNameLocation.y += 30;
 		}

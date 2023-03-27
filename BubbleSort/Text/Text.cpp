@@ -43,15 +43,15 @@ void Text::createAtlas(SDL_Renderer* renderer)
 	atlasTexture = std::unique_ptr<SDL_Texture, InvokeDestroy>(SDL_CreateTextureFromSurface(renderer, surface.get())); // create the full atlas texture
 }
 
-void Text::render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect destRect)
+void Text::render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect displayLocation)
 {
 	SDL_SetTextureColorMod(atlasTexture.get(), textColor.r, textColor.g, textColor.b);
 
 	for (const char& c : textToRender)
 	{
-		destRect.w = glyphRects[static_cast<int>(c)].w;
-		destRect.h = glyphRects[static_cast<int>(c)].h;
-		SDL_RenderCopy(renderer, atlasTexture.get(), &glyphRects[static_cast<int>(c)], &destRect);
-		destRect.x += glyphRects[static_cast<int>(c)].w;
+		displayLocation.w = glyphRects[static_cast<int>(c)].w;
+		displayLocation.h = glyphRects[static_cast<int>(c)].h;
+		SDL_RenderCopy(renderer, atlasTexture.get(), &glyphRects[static_cast<int>(c)], &displayLocation);
+		displayLocation.x += glyphRects[static_cast<int>(c)].w;
 	}
 }
