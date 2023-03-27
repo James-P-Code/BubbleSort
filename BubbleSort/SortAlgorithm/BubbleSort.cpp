@@ -1,9 +1,6 @@
 #include "BubbleSort.h"
 
-BubbleSort::BubbleSort()
-{
-	sortName = "Bubble Sort";
-}
+BubbleSort::BubbleSort() : SortAlgorithm("Bubble Sort") {}
 
 void BubbleSort::sort(BarChart& barChart)
 {

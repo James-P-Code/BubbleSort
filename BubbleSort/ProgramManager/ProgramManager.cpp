@@ -15,7 +15,7 @@ void ProgramManager::render()
 	currentState->render(renderWindow, barChart, text);
 }
 
-void ProgramManager::handleEvent(SDL_Event& event)
+void ProgramManager::handleEvent(SDL_Event& event) const
 {
 	currentState->handleEvent(event);
 }

@@ -1,5 +1,7 @@
 #include "SortAlgorithm.h"
 
+SortAlgorithm::SortAlgorithm(const std::string& sortName) : sortName(sortName) {}
+
 const bool SortAlgorithm::isSorted() const
 {
 	return sortedStatus;
@@ -15,7 +17,7 @@ const int SortAlgorithm::getSwapCount() const
 	return swapCount;
 }
 
-const std::vector<std::pair<int, SDL_Color>>& SortAlgorithm::getRectanglesToHighlight() const
+const std::vector<std::pair<const int, const SDL_Color>>& SortAlgorithm::getRectanglesToHighlight() const
 {
 	return rectanglesToHighlight;
 }
@@ -30,13 +32,13 @@ void SortAlgorithm::setArray(SDL_Rect* rectangleArray)
 	this->rectangleArray = rectangleArray;
 }
 
-void SortAlgorithm::swapRectangles(const int rectOne, const int rectTwo)
+void SortAlgorithm::swapRectangles(const int rectOneIndex, const int rectTwoIndex)
 {
-	int tempY = rectangleArray[rectOne].y, tempH = rectangleArray[rectOne].h;
-	rectangleArray[rectOne].y = rectangleArray[rectTwo].y;
-	rectangleArray[rectOne].h = rectangleArray[rectTwo].h;
-	rectangleArray[rectTwo].y = tempY;
-	rectangleArray[rectTwo].h = tempH;
+	int tempY = rectangleArray[rectOneIndex].y, tempH = rectangleArray[rectOneIndex].h;
+	rectangleArray[rectOneIndex].y = rectangleArray[rectTwoIndex].y;
+	rectangleArray[rectOneIndex].h = rectangleArray[rectTwoIndex].h;
+	rectangleArray[rectTwoIndex].y = tempY;
+	rectangleArray[rectTwoIndex].h = tempH;
 	++swapCount;
 }
 

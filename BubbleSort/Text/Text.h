@@ -11,7 +11,7 @@ class Text final : public TTFSubSystem
 public:
 	Text();
 	void createAtlas(SDL_Renderer* renderer);
-	void render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect destRect);
+	void render(SDL_Renderer* renderer, const std::string& textToRender, const SDL_Color& textColor, SDL_Rect destRect) const;
 
 private:
 	struct InvokeDestroy final

@@ -1,9 +1,6 @@
 #include "SelectionSort.h"
 
-SelectionSort::SelectionSort()
-{
-	sortName = "Selection Sort";
-}
+SelectionSort::SelectionSort() : SortAlgorithm("Selection Sort") {}
 
 void SelectionSort::sort(BarChart& barChart)
 {

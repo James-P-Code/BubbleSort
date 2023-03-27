@@ -11,7 +11,7 @@ public:
 
 private:
 	std::stack<std::pair<int, int>> qsStack;
-	int startIndex = 0, endIndex = numberOfRectangles - 1, pivotIndex, pivotRectY;
+	int startIndex = 0, endIndex = numberOfRectangles - 1, pivotIndex = 0, pivotRectY = 0;
 	bool newIteration = true;
 
 	void sort(BarChart& barChart) override;

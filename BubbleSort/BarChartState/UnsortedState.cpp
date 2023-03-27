@@ -12,7 +12,6 @@ void UnsortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text&
 		SDL_Color translucentColor = { 0, 0, 0, 220 };
 		SDL_Rect sortDisplayNameLocation = { 275, 200, 0, 0 };
 
-		renderWindow.clearRenderer();
 		renderWindow.renderArray(barChart.getChart().data());
 		renderWindow.renderTranslucentRect(translucentBackground, translucentColor);
 

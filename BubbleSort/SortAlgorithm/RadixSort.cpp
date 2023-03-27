@@ -1,9 +1,6 @@
 #include "RadixSort.h"
 
-RadixSort::RadixSort()
-{
-	sortName = "Radix Sort";
-}
+RadixSort::RadixSort() : SortAlgorithm("Radix Sort") {}
 
 void RadixSort::sort(BarChart& barChart)
 {

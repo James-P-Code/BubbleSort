@@ -11,7 +11,7 @@ public:
 	ProgramManager();
 	void update();
 	void render();
-	void handleEvent(SDL_Event& event);
+	void handleEvent(SDL_Event& event) const;
 	void changeState();
 	void setState(std::unique_ptr<BarChartState> newState);
 

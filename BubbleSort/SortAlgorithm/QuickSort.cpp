@@ -1,8 +1,7 @@
 #include "QuickSort.h"
 
-QuickSort::QuickSort()
+QuickSort::QuickSort() : SortAlgorithm("Quick Sort")
 {
-	sortName = "Quick Sort";
 	qsStack.push(std::make_pair(startIndex, endIndex));
 }
 

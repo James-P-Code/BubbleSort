@@ -11,8 +11,6 @@
 *  to show the visualization of the sorting.  Every iteration through the main() loop follows a "update -> render" pattern,
 *  where a step of a sort is done during the update, and then everything is rendered.    */
 
-class BarChart;
-
 class SortAlgorithm
 {
 public:
@@ -21,7 +19,7 @@ public:
 	const bool isSorted() const;
 	const std::string& getSortName() const;
 	const int getSwapCount() const;
-	const std::vector<std::pair<int, SDL_Color>>& getRectanglesToHighlight() const;
+	const std::vector<std::pair<const int, const SDL_Color>>& getRectanglesToHighlight() const;
 	void clearRectanglesToHighlight();
 
 	enum class SortType
@@ -39,13 +37,14 @@ public:
 protected:
 	static constexpr SDL_Color greenHighlightColor = { 66, 245, 72, 255 };
 	static constexpr SDL_Color redHighlightColor = { 230, 11, 11, 255 };
+	const std::string sortName;
 	SDL_Rect* rectangleArray = nullptr;
-	std::vector<std::pair<int, SDL_Color>> rectanglesToHighlight;
-	std::string sortName;
+	std::vector<std::pair<const int, const SDL_Color>> rectanglesToHighlight;
 	bool sortedStatus = false;
 	int  swapCount = 0, sortIterator = 0;
 
+	SortAlgorithm(const std::string& sortName);
 	void setArray(SDL_Rect* rectangleArray);
-	void swapRectangles(const int rectOne, const int rectTwo);
+	void swapRectangles(const int rectOneIndex, const int rectTwoIndex);
 	void setRectanglesToHighlight(const int indexOfRectangle, const SDL_Color& highlightColor);
 };

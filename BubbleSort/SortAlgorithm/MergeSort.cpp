@@ -2,10 +2,7 @@
 
 // TODO:  Clean this up
 
-MergeSort::MergeSort()
-{
-	sortName = "Merge Sort";
-}
+MergeSort::MergeSort() : SortAlgorithm("Merge Sort") {}
 
 void MergeSort::sort(BarChart& barChart)
 {

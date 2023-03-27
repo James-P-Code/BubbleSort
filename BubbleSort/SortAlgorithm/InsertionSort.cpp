@@ -1,8 +1,7 @@
 #include "InsertionSort.h"
 
-InsertionSort::InsertionSort()
+InsertionSort::InsertionSort() : SortAlgorithm("Insertion Sort")
 {
-	sortName = "Insertion Sort";
 	sortIterator = 1;
 }
 

@@ -8,7 +8,7 @@ public:
 	virtual ~BubbleSort() {};
 
 private:
-	bool swapOccurred;
+	bool swapOccurred = false;
 	int currentRectangle = 0;
 
 	void sort(BarChart& barChart) override;

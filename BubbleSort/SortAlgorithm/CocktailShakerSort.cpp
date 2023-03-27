@@ -1,8 +1,7 @@
 #include "CocktailShakerSort.h"
 
-CocktailShakerSort::CocktailShakerSort()
+CocktailShakerSort::CocktailShakerSort() : SortAlgorithm("Cocktail Shaker Sort")
 {
-	sortName = "Cocktail Shaker Sort";
 	++sortIterator;
 }
 
