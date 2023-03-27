@@ -23,20 +23,22 @@ void InsertionSort::sort(BarChart& barChart)
 			setRectanglesToHighlight(currentRectangle, greenHighlightColor);
 		}
 
+		setRectanglesToHighlight(sortIterator, redHighlightColor);
+
 		if (currentRectangle >= 0 && rectangleArray[currentRectangle].y < keyRect.y)
 		{
 			swapRectangles(currentRectangle + 1, currentRectangle);
 			setRectanglesToHighlight(currentRectangle, greenHighlightColor);
-			currentRectangle--;
+			--currentRectangle;
 		}
 
 		if (currentRectangle < 0 || rectangleArray[currentRectangle].y > keyRect.y)
 		{
 			newIteration = true;
-			currentRectangle++;
+			++currentRectangle;
 			rectangleArray[currentRectangle].y = keyRect.y;
 			rectangleArray[currentRectangle].h = keyRect.h;
-			sortIterator++;
+			++sortIterator;
 		}
 	}
 
