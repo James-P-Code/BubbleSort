@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BarChartState.h"
+#include <array>
 
 class UnsortedState final : public BarChartState
 {
@@ -18,4 +19,14 @@ private:
 
 	SortAlgorithm::SortType sortType = SortAlgorithm::SortType::None;
 	bool renderComplete = false, resetBarChart = false;
+	const std::array <std::string, 7> sortDisplayNames // REALLY NOT A FAN OF DOING IT THIS WAY
+	{
+		"Bubble Sort",
+		"Selection Sort",
+		"Insertion Sort",
+		"Quick Sort",
+		"Merge Sort",
+		"Cocktail Shaker Sort",
+		"Radix Sort"
+	};
 };

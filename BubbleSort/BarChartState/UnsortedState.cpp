@@ -17,11 +17,24 @@ void UnsortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text&
 {
 	if (!renderComplete)
 	{
+		int menuOptionNumber = 1;
+		SDL_Rect translucentBackground = { 0, 0, windowWidth, windowHeight };
+		SDL_Color translucentColor = { 0, 0, 0, 220 };
+		SDL_Rect sortDisplayNameLocation = { 275, 200, 0, 0 };
 		SDL_Rect textDisplayRect = { 10, 10, 0, 0 };  // where the text will be displayed on the screen
 		SDL_Color textColor = { 111, 245, 66, 255 };
 		renderWindow.clearRenderer();
 		renderWindow.renderArray(barChart.getChart().data());
-		text.render(renderWindow.getRenderer(), "Swap Count: 0", textColor, textDisplayRect);
+		renderWindow.renderTranslucentRect(translucentBackground, translucentColor);
+	//	text.render(renderWindow.getRenderer(), "Swap Count: 0", textColor, textDisplayRect);
+
+		for (const std::string& displayName : sortDisplayNames)
+		{
+			text.render(renderWindow.getRenderer(), std::to_string(menuOptionNumber) + " " + displayName, textColor, sortDisplayNameLocation);
+			++menuOptionNumber;
+			sortDisplayNameLocation.y += 30;
+		}
+
 		renderWindow.updateWindow();
 		renderComplete = true;
 	}

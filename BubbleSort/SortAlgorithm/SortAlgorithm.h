@@ -4,6 +4,7 @@
 #include "../Constants.h"
 #include "../BarChart/BarChart.h"
 #include <string>
+#include <array>
 #include <vector>
 
 /* All of the sorts are done in what I would call an iterative manner.  Because the overall program is driven by a loop
@@ -16,6 +17,14 @@ class BarChart;
 class SortAlgorithm
 {
 public:
+	virtual ~SortAlgorithm() {};
+	virtual void sort(BarChart& barChart) = 0;
+	const bool isSorted() const;
+	const std::string& getSortName() const;
+	const int getSwapCount() const;
+	const std::vector<std::pair<int, SDL_Color>>& getRectanglesToHighlight() const;
+	void clearRectanglesToHighlight();
+
 	enum class SortType
 	{
 		None,
@@ -27,14 +36,6 @@ public:
 		CocktailShakerSort,
 		RadixSort
 	};
-
-	virtual ~SortAlgorithm() {};
-	virtual void sort(BarChart& barChart) = 0;
-	const bool isSorted() const;
-	const std::string& getSortName() const;
-	const int getSwapCount() const;
-	const std::vector<std::pair<int, SDL_Color>>& getRectanglesToHighlight() const;
-	void clearRectanglesToHighlight();
 
 protected:
 	static constexpr SDL_Color greenHighlightColor = { 66, 245, 72, 255 };

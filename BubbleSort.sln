@@ -26,8 +26,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BarChartState", "BarChartState", "{8FBFF9C7-E02D-4D3E-B1B4-5BEC0AA3D30E}"
 	ProjectSection(SolutionItems) = preProject
 		BubbleSort\BarChartState\BarChartState.h = BubbleSort\BarChartState\BarChartState.h
-		BubbleSort\BarChartState\MenuState.cpp = BubbleSort\BarChartState\MenuState.cpp
-		BubbleSort\BarChartState\MenuState.h = BubbleSort\BarChartState\MenuState.h
 		BubbleSort\BarChartState\SortedState.cpp = BubbleSort\BarChartState\SortedState.cpp
 		BubbleSort\BarChartState\SortedState.h = BubbleSort\BarChartState\SortedState.h
 		BubbleSort\BarChartState\SortingState.cpp = BubbleSort\BarChartState\SortingState.cpp

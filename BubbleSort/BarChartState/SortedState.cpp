@@ -7,8 +7,6 @@ void SortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& t
 {
 	if (currentRectangle == 0)  // inital render
 	{
-		SDL_Rect textDisplayRect = { 10, 10, 0, 0 };
-		SDL_Color textColor = { 111, 245, 66, 255 };
 		renderWindow.renderArray(barChart.getChart().data());
 	}
 
@@ -23,6 +21,12 @@ void SortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& t
 	if (currentRectangle <= numberOfRectangles)
 	{
 		renderWindow.updateWindow();
+	}
+
+	if (currentRectangle == numberOfRectangles)
+	{
+		SDL_Rect continuePromptLocation = { 10, 50, 0, 0 };
+		text.render(renderWindow.getRenderer(), "Press any key to continue...", highlightColor, continuePromptLocation);
 	}
 }
 

@@ -45,9 +45,6 @@
     <ClCompile Include="BarChartState\SortedState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BarChartState\MenuState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SortAlgorithm\SortAlgorithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -105,9 +102,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BarChartState\SortedState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BarChartState\MenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SortAlgorithm\SortAlgorithm.h">

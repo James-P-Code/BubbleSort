@@ -147,7 +147,6 @@
     <ClCompile Include="SortAlgorithm\CocktailShakerSort.cpp" />
     <ClCompile Include="SortAlgorithm\InsertionSort.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="BarChartState\MenuState.cpp" />
     <ClCompile Include="SortAlgorithm\MergeSort.cpp" />
     <ClCompile Include="SortAlgorithm\QuickSort.cpp" />
     <ClCompile Include="SortAlgorithm\RadixSort.cpp" />
@@ -169,7 +168,6 @@
     <ClInclude Include="SortAlgorithm\CocktailShakerSort.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="SortAlgorithm\InsertionSort.h" />
-    <ClInclude Include="BarChartState\MenuState.h" />
     <ClInclude Include="SortAlgorithm\MergeSort.h" />
     <ClInclude Include="SortAlgorithm\QuickSort.h" />
     <ClInclude Include="SortAlgorithm\RadixSort.h" />
