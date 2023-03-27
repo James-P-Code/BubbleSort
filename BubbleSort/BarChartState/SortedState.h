@@ -10,6 +10,7 @@ public:
 private:
 	SDL_Color flourishColor = { 143, 245, 42, 255 };  // RGBA color values
 	int currentRectangle = 0;
+	bool startReset = false, currentlyResetting = false;
 
 	void update(BarChart& barChart) override;
 	void render(RenderWindow& renderWindow, BarChart& barChart, Text& text) override;
