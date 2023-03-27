@@ -50,7 +50,7 @@ void SortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text& t
 
 void SortedState::handleEvent(SDL_Event& event) 
 {
-	if (event.type == SDL_KEYDOWN)
+	if (event.type == SDL_KEYDOWN && !startReset && !currentlyResetting)
 	{
 		startReset = true;
 		currentRectangle = 0;

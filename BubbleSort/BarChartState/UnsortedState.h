@@ -6,8 +6,6 @@
 class UnsortedState final : public BarChartState
 {
 public:
-	UnsortedState() {};
-	UnsortedState(const bool); // Used with "true" to reset the bar chart
 	virtual ~UnsortedState() {};
 
 private:

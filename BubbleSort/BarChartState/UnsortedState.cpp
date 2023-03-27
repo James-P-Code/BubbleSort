@@ -1,9 +1,6 @@
 #include "UnsortedState.h"
 #include "../ProgramManager/ProgramManager.h"
 
-// Use this constructor to reset the bar chart
-UnsortedState::UnsortedState(const bool resetBarChart) : resetBarChart(resetBarChart) {}
-
 void UnsortedState::update(BarChart& barChart) 
 {
 	if (resetBarChart)
@@ -26,7 +23,6 @@ void UnsortedState::render(RenderWindow& renderWindow, BarChart& barChart, Text&
 		renderWindow.clearRenderer();
 		renderWindow.renderArray(barChart.getChart().data());
 		renderWindow.renderTranslucentRect(translucentBackground, translucentColor);
-	//	text.render(renderWindow.getRenderer(), "Swap Count: 0", textColor, textDisplayRect);
 
 		for (const std::string& displayName : sortDisplayNames)
 		{
