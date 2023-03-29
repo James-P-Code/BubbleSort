@@ -35,9 +35,10 @@ int main(int argc, char* argv[])
 			}
 			programManager.handleEvent(event);			
 		}
-		programManager.update();
-		programManager.render();
-		programManager.changeState();
+	//	programManager.update();
+	//	programManager.render();
+	//	programManager.changeState();
+		programManager.rectangleManagerTest();
 
 		frameEnd = SDL_GetTicks() - frameStart;
 		

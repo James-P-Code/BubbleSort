@@ -3,6 +3,7 @@
 ProgramManager::ProgramManager() : currentState(std::make_unique<UnsortedState>())
 {
 	text.createAtlas(renderWindow.getRenderer());
+	rectangleManager.createRectangles();
 }
 
 void ProgramManager::update()
@@ -28,4 +29,17 @@ void ProgramManager::changeState()
 void ProgramManager::setState(std::unique_ptr<BarChartState> newState)
 {
 	currentState = std::move(newState);
+}
+
+void ProgramManager::rectangleManagerTest()
+{
+	renderWindow.clearRenderer();
+	SDL_RenderGeometry(renderWindow.getRenderer(), 
+					   nullptr, 
+					   rectangleManager.getRectangleVertices().data(), 
+		               totalVertices, 
+				       rectangleManager.getIndices().data(), 
+					   totalIndices);
+	renderWindow.updateWindow();
+	rectangleManager.swapTest();
 }

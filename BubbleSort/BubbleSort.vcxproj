@@ -143,6 +143,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BarChart\BarChart.cpp" />
+    <ClCompile Include="RectangleManager.cpp" />
     <ClCompile Include="SortAlgorithm\BubbleSort.cpp" />
     <ClCompile Include="SortAlgorithm\CocktailShakerSort.cpp" />
     <ClCompile Include="SortAlgorithm\InsertionSort.cpp" />
@@ -160,10 +161,12 @@
     <ClCompile Include="Text\Text.cpp" />
     <ClCompile Include="TTFSubSystem\TTFSubSystem.cpp" />
     <ClCompile Include="BarChartState\UnsortedState.cpp" />
+    <ClCompile Include="BarChartState\VertexTestState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BarChart\BarChart.h" />
     <ClInclude Include="BarChartState\BarChartState.h" />
+    <ClInclude Include="RectangleManager.h" />
     <ClInclude Include="SortAlgorithm\BubbleSort.h" />
     <ClInclude Include="SortAlgorithm\CocktailShakerSort.h" />
     <ClInclude Include="Constants.h" />
@@ -181,6 +184,7 @@
     <ClInclude Include="Text\Text.h" />
     <ClInclude Include="TTFSubSystem\TTFSubSystem.h" />
     <ClInclude Include="BarChartState\UnsortedState.h" />
+    <ClInclude Include="BarChartState\VertexTestState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
